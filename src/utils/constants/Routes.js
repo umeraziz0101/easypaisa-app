@@ -1,12 +1,3 @@
-// const Routes = {
-//   splash: 'Splash',
-//   home: 'Home',
-//   cashPoints: 'CashPoints',
-//   promotions: 'Promotions',
-//   myAccount: 'MyAccount',
-//   mainTabs: 'MainTabs',
-// };
-
 const Routes = {
   splash: {
     name: 'Splash',

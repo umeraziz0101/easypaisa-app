@@ -1,9 +1,3 @@
-const Strings = {
-  texts: {},
-  buttons: {},
-  notification: {},
-  messages: {},
-  errors: {},
-};
+const Strings = {};
 
 export default Strings;
