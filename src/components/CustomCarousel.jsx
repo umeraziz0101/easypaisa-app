@@ -9,31 +9,31 @@ const ITEMS_PER_PAGE = 12;
 
 const ITEMS_PER_ROW = 5;
 const ITEM_WIDTH = screenWidth / 5 - 20;
-const GRID_WIDTH = ITEM_WIDTH * ITEMS_PER_ROW + 20; // Adjust margin space if needed
+const GRID_WIDTH = ITEM_WIDTH * ITEMS_PER_ROW + 20;
 
 const items = [
-  {id: '1', icon: 'home', title: 'Home'},
-  {id: '2', icon: 'user', title: 'User'},
-  {id: '3', icon: 'bell', title: 'Notifications'},
-  {id: '4', icon: 'cog', title: 'Settings'},
-  {id: '5', icon: 'heart', title: 'Favorites'},
-  {id: '6', icon: 'star', title: 'Rated'},
-  {id: '7', icon: 'camera', title: 'Camera'},
-  {id: '8', icon: 'music', title: 'Music'},
-  {id: '9', icon: 'gift', title: 'Gifts'},
-  {id: '10', icon: 'globe', title: 'Explore'},
-  {id: '11', icon: 'envelope', title: 'Messages'},
-  {id: '12', icon: 'calendar', title: 'Calendar'},
-  {id: '13', icon: 'comment', title: 'Comments'},
-  {id: '14', icon: 'shopping-cart', title: 'Cart'},
-  {id: '15', icon: 'lock', title: 'Privacy'},
-  {id: '16', icon: 'book', title: 'Library'},
-  {id: '17', icon: 'book', title: 'Library'},
-  {id: '18', icon: 'book', title: 'Library'},
-  {id: '19', icon: 'book', title: 'Library'},
-  {id: '20', icon: 'book', title: 'Library'},
-  {id: '21', icon: 'book', title: 'Library'},
-  {id: '22', icon: 'book', title: 'Library'},
+  {id: '1', icon: 'home', title: 'Easyload'},
+  {id: '2', icon: 'user', title: 'Easycash'},
+  {id: '3', icon: 'bell', title: 'Savings Pocket'},
+  {id: '4', icon: 'cog', title: 'Invite & Earn'},
+  {id: '5', icon: 'heart', title: 'Donations'},
+  {id: '6', icon: 'star', title: 'Term Deposit'},
+  {id: '7', icon: 'camera', title: 'Daily Rewards'},
+  {id: '8', icon: 'music', title: 'Buy Now Pay Later'},
+  {id: '9', icon: 'gift', title: 'Insurance Marketplace'},
+  {id: '10', icon: 'globe', title: 'M-Tag'},
+  {id: '11', icon: 'envelope', title: 'Rs.1 Game'},
+  {id: '12', icon: 'calendar', title: 'Raast Payment'},
+  {id: '13', icon: 'comment', title: 'Discounts'},
+  {id: '14', icon: 'shopping-cart', title: 'Mini App'},
+  {id: '15', icon: 'lock', title: 'Topups'},
+  {id: '16', icon: 'book', title: 'Remittance'},
+  {id: '17', icon: 'book', title: 'Education'},
+  {id: '18', icon: 'book', title: 'NADRA fee'},
+  {id: '19', icon: 'book', title: 'Online Payment'},
+  {id: '20', icon: 'book', title: 'Enter and Win'},
+  {id: '21', icon: 'book', title: 'Credit Score'},
+  {id: '22', icon: 'book', title: 'Tohfa'},
   {id: '23', icon: 'book', title: 'Library'},
   {id: '24', icon: 'book', title: 'Library'},
   {id: '25', icon: 'book', title: 'Library'},
@@ -79,8 +79,13 @@ const CustomCarousel = () => {
       <View style={styles.page}>
         {pageItems.map(item => (
           <View key={item.id} style={styles.item}>
-            <FontAwesome name={item.icon} size={30} color="#333" />
-            <Text style={styles.title}>{item.title}</Text>
+            <View style={styles.iconContainer}>
+              <FontAwesome name={item.icon} size={30} color="#333" />
+            </View>
+
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>{item.title}</Text>
+            </View>
           </View>
         ))}
       </View>
@@ -91,7 +96,7 @@ const CustomCarousel = () => {
     <View style={styles.container}>
       <Carousel
         width={screenWidth}
-        height={350}
+        height={270}
         data={pages}
         scrollAnimationDuration={500}
         onSnapToItem={index => setCurrentIndex(index)}
@@ -118,14 +123,12 @@ export default CustomCarousel;
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 32,
+    paddingVertical: 16,
     backgroundColor: '#fff',
     alignItems: 'center',
     borderRadius: 16,
   },
   pageContainer: {
-    // backgroundColor: '#aa2',
-    // paddingVertical: 40,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -141,8 +144,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  iconContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  titleContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   title: {
-    fontSize: 13,
+    fontSize: 11,
     marginTop: 6,
     textAlign: 'center',
   },

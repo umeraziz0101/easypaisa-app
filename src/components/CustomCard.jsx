@@ -1,27 +1,29 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../utils/constants/Colors';
-const CustomCard = ({title, subTitle, bgDark}) => {
+import CustomButton from './CustomButton';
+
+const CustomCard = ({icon, title, subtitle, buttonText}) => {
   return (
-    <View
-      style={[
-        styles.cardContainer,
-        bgDark && {backgroundColor: Colors.gray_322e34},
-      ]}>
-      <View style={styles.cardTitleContainer}>
-        <Text style={styles.cardTitle}>{title}</Text>
-        {bgDark && (
-          <Ionicons name={'arrow-forward'} size={16} color={Colors.white_fff} />
-        )}
-      </View>
-      <Text style={styles.cardSubtitle}>{subTitle}</Text>
-      <TouchableOpacity style={styles.cardButton}>
-        <View style={styles.cardButtonTextContainer}>
-          <Text style={styles.cardButtonText}>Manage card</Text>
-          <Ionicons name={'arrow-forward'} size={16} color={Colors.white_fff} />
+    <View style={styles.cardContainer}>
+      <View style={styles.itemRow}>
+        <View style={styles.icon}>
+          <Image source={icon} style={styles.icon} />
         </View>
-      </TouchableOpacity>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.subtitle} numberOfLines={2} ellipsizeMode="tail">
+            {subtitle}
+          </Text>
+          <CustomButton
+            text={buttonText}
+            borderColor={Colors.black_111}
+            iconColor={Colors.green_04bb5f}
+            textColor={Colors.black_111}
+            buttonContainerStyle={{alignSelf: 'flex-start', borderWidth: 1}}
+          />
+        </View>
+      </View>
     </View>
   );
 };
@@ -30,42 +32,26 @@ export default CustomCard;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: Colors.green_1c6f53,
+    backgroundColor: Colors.white_fff,
     borderRadius: 12,
-    width: 170,
     padding: 18,
   },
-  cardTitleContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  itemRow: {flexDirection: 'row'},
+
+  icon: {
+    width: 50,
+    height: 50,
   },
-  cardTitle: {
-    color: Colors.white_fff,
-    fontSize: 12,
-    fontWeight: 'bold',
+
+  titleContainer: {
+    marginLeft: 16,
+    marginRight: 70,
   },
-  cardSubtitle: {
-    color: Colors.yellow_e4efa5,
-    fontSize: 11,
-    marginTop: 10,
-  },
-  cardButton: {
-    marginTop: 50,
-    paddingVertical: 4,
-    paddingHorizontal: 6,
-    borderRadius: 24,
-    borderWidth: 2,
-    borderColor: Colors.green_04bb5f,
-  },
-  cardButtonTextContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  cardButtonText: {
-    color: Colors.white_fff,
-    fontSize: 12,
+
+  title: {
+    fontSize: 16,
     fontWeight: '500',
-    marginRight: 4,
+    marginBottom: 4,
   },
+  subtitle: {fontSize: 14, marginBottom: 24},
 });

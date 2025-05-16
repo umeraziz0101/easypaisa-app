@@ -14,7 +14,9 @@ import QuickActionItem from '../components/QuickActionItem';
 import AccountCard from '../components/AccountCard';
 import CustomCarousel from '../components/CustomCarousel';
 import CustomSection from '../components/CustomSection';
+import DebitCard from '../components/DebitCard';
 import CustomCard from '../components/CustomCard';
+import PromotionScroll from '../components/PromotionScroll';
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
@@ -72,25 +74,51 @@ const HomeScreen = () => {
               </View>
             </View>
           </CustomSection>
-
           {/* More with easypaisa */}
-          <CustomSection title={'More with easyPaisa'}>
+          <CustomSection title={'More with easypaisa'}>
             <CustomCarousel />
           </CustomSection>
-
-          {/* miniApps */}
+          {/* Debit Card */}
           <CustomSection title={'Get your easypaisa Debit Card'}>
             <View style={styles.miniAppSectionContainer}>
-              <CustomCard
+              <DebitCard
                 title={'Online Card'}
-                subTitle={'Only for Online Payments in Pakistan'}
+                subtitle={'Only for Online Payments in Pakistan'}
               />
-              <CustomCard
+              <DebitCard
                 title={'Plastic Card'}
-                subTitle={'Use at any ATM or Shop in Pakistan'}
+                subtitle={'Use at any ATM or Shop in Pakistan'}
                 bgDark
               />
             </View>
+          </CustomSection>
+          {/* Mini Apps */}
+          <CustomSection title={'Discover miniApps on easypaisa'}>
+            <CustomCarousel />
+          </CustomSection>
+          {/* Promotion */}
+          <CustomSection title={"Tap to see what's New"}>
+            <PromotionScroll />
+          </CustomSection>
+          {/* Schedule Transaction */}
+          <CustomSection title={'Schedule Your Transactions'}>
+            <CustomCard
+              title={'Set payments in advance'}
+              subtitle={'Now Setup Mobile Packages and Easyload in advance.'}
+              buttonText={'Schedule Payments'}
+              icon={require('../assets/images/1.png')}
+            />
+          </CustomSection>
+          {/* Help */}
+          <CustomSection childrenStyle={{marginVertical: 0}}>
+            <CustomCard
+              title={'Help & Customer Support'}
+              subtitle={
+                'Register a complaint or get quick help on queries related to easypaisa'
+              }
+              buttonText={'Get Help'}
+              icon={require('../assets/images/1.png')}
+            />
           </CustomSection>
         </View>
       </ScrollView>

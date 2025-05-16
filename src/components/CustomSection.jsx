@@ -1,12 +1,12 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const CustomSection = ({title, children}) => {
+const CustomSection = ({title, children, containerStyle, childrenStyle}) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       {title && <Text style={styles.sectionTitle}>{title}</Text>}
 
-      <View style={styles.sectionChildren}>{children}</View>
+      <View style={[styles.sectionChildren, childrenStyle]}>{children}</View>
     </View>
   );
 };
@@ -15,7 +15,7 @@ export default CustomSection;
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 16,
+    marginVertical: 4,
   },
   sectionTitle: {
     fontSize: 16,
