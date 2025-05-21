@@ -17,16 +17,23 @@ import CustomSection from '../components/CustomSection';
 import DebitCard from '../components/DebitCard';
 import CustomCard from '../components/CustomCard';
 import PromotionScroll from '../components/PromotionScroll';
+import {useNavigation, DrawerActions} from '@react-navigation/native';
 const HomeScreen = () => {
+  const navigation = useNavigation();
+  const onPressMenu = () => {
+    navigation.dispatch(DrawerActions.openDrawer());
+  };
   return (
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.profileContainer}>
-          <Image
-            source={require('..//assets/images/profile.png')}
-            style={styles.profileImage}
-          />
+          <TouchableOpacity onPress={onPressMenu}>
+            <Image
+              source={require('..//assets/images/promotion2.png')}
+              style={styles.profileImage}
+            />
+          </TouchableOpacity>
         </View>
         <View style={styles.logoContainer}>
           <Image
@@ -51,9 +58,11 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         {/* Account Card */}
-        <AccountCard />
+        <View style={styles.accountCardContainer}>
+          <AccountCard />
+        </View>
         <View style={styles.bodyContainer}>
           {/* Quick Actions */}
           <CustomSection>
@@ -144,8 +153,8 @@ const styles = StyleSheet.create({
   },
 
   profileContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    // flexDirection: 'row',
+    // alignItems: 'center',
   },
   profileImage: {width: 36, height: 36, borderRadius: 18, marginRight: 8},
   logoContainer: {flexDirection: 'row', justifyContent: 'center'},
@@ -160,6 +169,13 @@ const styles = StyleSheet.create({
   },
   bellIcon: {
     marginLeft: 16,
+  },
+  accountCardContainer: {
+    paddingHorizontal: 16,
+    // paddingVertical: 16,
+    // paddingTop: 16,
+    paddingBottom: 26,
+    backgroundColor: Colors.white_fff,
   },
 
   bodyContainer: {

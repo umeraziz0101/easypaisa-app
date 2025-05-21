@@ -5,8 +5,13 @@ const Colors = {
   green_1c6f53: '#1c6f53',
   green_2e8064: '#2e8064',
   yellow_e4efa5: '#e4efa5',
+  yellow_fed600: '#fed600',
+  gray_cbcbcb: '#cbcbcb',
+  gray_a8a8aa: '#a8a8aa',
+  gray_717171: '#717171',
   gray_322e34: '#322e34',
   black_111: '#111',
+  brown_b58755: '#b58755',
 };
 
 export default Colors;

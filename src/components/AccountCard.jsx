@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   accountCard: {
     backgroundColor: Colors.green_1c6f53,
     borderRadius: 12,
-    marginHorizontal: 16,
+    // marginHorizontal: 16,
     marginTop: 16,
     padding: 18,
   },

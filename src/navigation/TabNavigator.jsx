@@ -6,7 +6,7 @@ import CashPointsScreen from '../screens/CashPointsScreen';
 import PromotionsScreen from '../screens/PromotionsScreen';
 import MyAccountScreen from '../screens/MyAccountScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {View} from 'react-native';
+import {StatusBar, View} from 'react-native';
 import Colors from '../utils/constants/Colors';
 
 const Tab = createBottomTabNavigator();
@@ -38,6 +38,7 @@ const TabNavigator = () => {
                 borderTopWidth: focused ? 1 : 0,
                 borderTopColor: Colors.green_04bb5f,
               }}>
+              <StatusBar barStyle={'dark-content'} />
               <View style={{marginTop: 8}}>
                 <Ionicons name={iconName} size={size} color={color} />
               </View>

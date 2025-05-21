@@ -73,7 +73,7 @@ const PromotionsScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
-      <CustomHeader />
+      <CustomHeader title={'Promotions'} />
       <ScrollView
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}>

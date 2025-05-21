@@ -1,9 +1,20 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../utils/constants/Colors';
+import {useNavigation} from '@react-navigation/native';
+import Routes from '../utils/constants/Routes';
 
-const CustomHeader = ({backgroundColor}) => {
-  const onPressBack = () => {};
+const CustomHeader = ({backgroundColor, title, backIconColor}) => {
+  const navigation = useNavigation();
+  const onPressBack = () => {
+    navigation.navigate(Routes.mainTabs.name, {
+      // “MainTabs” is your Drawer screen
+      screen: 'Tabs', // the TabNavigator’s name
+      params: {
+        screen: Routes.home.name, // finally, the “Home” tab
+      },
+    });
+  };
   return (
     <View
       style={[
@@ -11,9 +22,13 @@ const CustomHeader = ({backgroundColor}) => {
         backgroundColor && {backgroundColor: backgroundColor},
       ]}>
       <TouchableOpacity style={styles.backButton} onPress={onPressBack}>
-        <Ionicons name="chevron-back" size={24} color="#fff" />
+        <Ionicons
+          name="chevron-back"
+          size={24}
+          color={backIconColor ? backIconColor : '#fff'}
+        />
       </TouchableOpacity>
-      <Text style={styles.headerTitle}>Promotions</Text>
+      <Text style={styles.headerTitle}>{title}</Text>
       <View style={styles.placeholder} />
     </View>
   );
