@@ -9,6 +9,7 @@ const Colors = {
   gray_cbcbcb: '#cbcbcb',
   gray_a8a8aa: '#a8a8aa',
   gray_717171: '#717171',
+  gray_9b9b9b: '#9b9b9b',
   gray_322e34: '#322e34',
   black_111: '#111',
   brown_b58755: '#b58755',

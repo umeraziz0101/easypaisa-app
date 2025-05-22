@@ -14,8 +14,9 @@ const ProfileCard = ({userPhoto, userFullName, userNumber, userEmail}) => {
           <View style={styles.titleRow}>
             <Text style={styles.title}>{userFullName}</Text>
             <CustomButton
-              iconLeft={10}
-              // iconLeftSize={10}
+              iconLeft={'pencil'}
+              iconLeftSize={10}
+              buttonTextLeftStyle={{fontSize: 10}}
               iconColor={Colors.green_04bb5f}
               borderColor={Colors.green_04bb5f}
               text={'Edit'}

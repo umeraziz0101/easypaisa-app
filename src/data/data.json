@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "AHMAD ALI",
+      "email": "ahmadali@email.com",
+      "mobile": "03456789012",
+      "profileImage": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ],
+  "promotions": [
+    {
+      "id": "1",
+      "title": "Watch every match live in just Rs. 1",
+      "description": "Subscribe & stream 🏏",
+      "image": "https://easypaisa.com.pk/wp-content/uploads/2024/07/Promotions-sign-up.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Get 20% Extra",
+      "description": "Shop & clean free 👍",
+      "image": "https://easypaisa.com.pk/wp-content/uploads/2024/07/Promotions-Visa-broken-image.png"
+    },
+    {
+      "id": "3",
+      "title": "Book & win Rs. 10K!",
+      "description": "Get tickets via booking.com 🚂",
+      "image": "https://easypaisa.com.pk/wp-content/uploads/2024/07/promotions-second-image.png"
+    },
+    {
+      "id": "4",
+      "title": "Level up your easypoints account for just Rs. 1",
+      "description": "Eligible title's, every day 🧾",
+      "image": "https://easypaisa.com.pk/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-05-at-5.34.10-PM-1.jpeg"
+    },
+    {
+      "id": "5",
+      "title": "Free life insurance pe free phone upgrade!",
+      "description": "Terms apply 📱",
+      "image": "https://laz-img-cdn.alicdn.com/images/ims-web/TB1deHHgy_1gK0jSZFqXXcpaXXa.jpg"
+    },
+    {
+      "id": "6",
+      "title": "More invites more rewards",
+      "description": "Invite & earn more! 💸",
+      "image": "https://apna4g.com/wp-content/uploads/2023/01/4-Easypaisa-Promo-Code-Today.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Grocery shopping just got easier",
+      "description": "Shop on fastest on-demand grocery home shop",
+      "image": "https://propakistani.pk/wp-content/uploads/2021/10/easypaisa-NIMS-certificate-1.png"
+    },
+    {
+      "id": "8",
+      "title": "Shop non-stop with Daraz discounts!",
+      "description": "Pay with easypaisa & save! 💰",
+      "image": "https://i.ytimg.com/vi/Kdq96Xq61ag/maxresdefault.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Insurance aur prize dono free",
+      "description": "Win a bike for free! 🏍",
+      "image": "https://apna4g.com/wp-content/uploads/2023/01/4-Easypaisa-Promo-Code-Today.jpg"
+    }
+  ]
+}

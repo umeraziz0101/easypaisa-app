@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Dimensions, Image} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Colors from '../utils/constants/Colors';
 
 const {width: screenWidth} = Dimensions.get('window');
@@ -12,61 +11,58 @@ const ITEM_WIDTH = screenWidth / 5 - 20;
 const GRID_WIDTH = ITEM_WIDTH * ITEMS_PER_ROW + 20;
 
 const items = [
-  {id: '1', icon: 'home', title: 'Easyload'},
-  {id: '2', icon: 'user', title: 'Easycash'},
-  {id: '3', icon: 'bell', title: 'Savings Pocket'},
-  {id: '4', icon: 'cog', title: 'Invite & Earn'},
-  {id: '5', icon: 'heart', title: 'Donations'},
-  {id: '6', icon: 'star', title: 'Term Deposit'},
-  {id: '7', icon: 'camera', title: 'Daily Rewards'},
-  {id: '8', icon: 'music', title: 'Buy Now Pay Later'},
-  {id: '9', icon: 'gift', title: 'Insurance Marketplace'},
-  {id: '10', icon: 'globe', title: 'M-Tag'},
-  {id: '11', icon: 'envelope', title: 'Rs.1 Game'},
-  {id: '12', icon: 'calendar', title: 'Raast Payment'},
-  {id: '13', icon: 'comment', title: 'Discounts'},
-  {id: '14', icon: 'shopping-cart', title: 'Mini App'},
-  {id: '15', icon: 'lock', title: 'Topups'},
-  {id: '16', icon: 'book', title: 'Remittance'},
-  {id: '17', icon: 'book', title: 'Education'},
-  {id: '18', icon: 'book', title: 'NADRA fee'},
-  {id: '19', icon: 'book', title: 'Online Payment'},
-  {id: '20', icon: 'book', title: 'Enter and Win'},
-  {id: '21', icon: 'book', title: 'Credit Score'},
-  {id: '22', icon: 'book', title: 'Tohfa'},
-  {id: '23', icon: 'book', title: 'Library'},
-  {id: '24', icon: 'book', title: 'Library'},
-  {id: '25', icon: 'book', title: 'Library'},
-  {id: '26', icon: 'book', title: 'Library'},
-  {id: '27', icon: 'book', title: 'Library'},
-  {id: '28', icon: 'book', title: 'Library'},
-  {id: '29', icon: 'book', title: 'Library'},
-  {id: '30', icon: 'book', title: 'Library'},
-  {id: '31', icon: 'book', title: 'Library'},
-  {id: '32', icon: 'book', title: 'Library'},
-  {id: '33', icon: 'book', title: 'Library'},
-  {id: '34', icon: 'book', title: 'Library'},
+  {id: '1', icon: require('../assets/icons/cash.png'), title: 'Easyload'},
+  {id: '2', icon: require('../assets/icons/cash.png'), title: 'Easycash'},
+  {id: '3', icon: require('../assets/icons/cash.png'), title: 'Savings Pocket'},
+  {id: '4', icon: require('../assets/icons/cash.png'), title: 'Invite & Earn'},
+  {id: '5', icon: require('../assets/icons/cash.png'), title: 'Donations'},
+  {id: '6', icon: require('../assets/icons/cash.png'), title: 'Term Deposit'},
+  {id: '7', icon: require('../assets/icons/cash.png'), title: 'Daily Rewards'},
+  {
+    id: '8',
+    icon: require('../assets/icons/cash.png'),
+    title: 'Buy Now Pay Later',
+  },
+  {
+    id: '9',
+    icon: require('../assets/icons/cash.png'),
+    title: 'Insurance Marketplace',
+  },
+  {id: '10', icon: require('../assets/icons/cash.png'), title: 'M-Tag'},
+  {id: '11', icon: require('../assets/icons/cash.png'), title: 'Rs.1 Game'},
+  {id: '12', icon: require('../assets/icons/cash.png'), title: 'Raast Payment'},
+  {id: '13', icon: require('../assets/icons/cash.png'), title: 'Discounts'},
+  {id: '14', icon: require('../assets/icons/cash.png'), title: 'Mini App'},
+  {id: '15', icon: require('../assets/icons/cash.png'), title: 'Topups'},
+  {id: '16', icon: require('../assets/icons/cash.png'), title: 'Remittance'},
+  {id: '17', icon: require('../assets/icons/cash.png'), title: 'Education'},
+  {id: '18', icon: require('../assets/icons/cash.png'), title: 'NADRA fee'},
+  {
+    id: '19',
+    icon: require('../assets/icons/cash.png'),
+    title: 'Online Payment',
+  },
+  {id: '20', icon: require('../assets/icons/cash.png'), title: 'Enter and Win'},
+  {id: '21', icon: require('../assets/icons/cash.png'), title: 'Credit Score'},
+  {id: '22', icon: require('../assets/icons/cash.png'), title: 'Tohfa'},
 ];
 
-const chunkArrayWithSeeAll = (array, size) => {
+const chunkArrayWithSeeAll = (array, pageSize) => {
+  const realPerPage = pageSize - 1;
   const chunked = [];
-  for (let i = 0; i < array.length; i += size) {
-    let chunk = array.slice(i, i + size);
 
-    const seeAllItem = {
-      id: `see-all-${i / size}`,
-      icon: 'ellipsis-h',
+  for (let i = 0; i < array.length; i += realPerPage) {
+    const slice = array.slice(i, i + realPerPage);
+
+    slice.push({
+      id: `see-all-${Math.floor(i / realPerPage)}`,
+      icon: require('../assets/icons/more.png'),
       title: 'See All',
-    };
+    });
 
-    if (chunk.length === size) {
-      chunk[size - 1] = seeAllItem;
-    } else {
-      chunk.push(seeAllItem);
-    }
-
-    chunked.push(chunk);
+    chunked.push(slice);
   }
+
   return chunked;
 };
 
@@ -80,7 +76,7 @@ const CustomCarousel = () => {
         {pageItems.map(item => (
           <View key={item.id} style={styles.item}>
             <View style={styles.iconContainer}>
-              <FontAwesome name={item.icon} size={30} color="#333" />
+              <Image source={item.icon} style={styles.icon} />
             </View>
 
             <View style={styles.titleContainer}>
@@ -94,14 +90,16 @@ const CustomCarousel = () => {
 
   return (
     <View style={styles.container}>
-      <Carousel
-        width={screenWidth}
-        height={270}
-        data={pages}
-        scrollAnimationDuration={500}
-        onSnapToItem={index => setCurrentIndex(index)}
-        renderItem={({item}) => renderPage(item)}
-      />
+      <View style={styles.carouselWrapper}>
+        <Carousel
+          width={GRID_WIDTH}
+          height={270}
+          data={pages}
+          scrollAnimationDuration={500}
+          onSnapToItem={index => setCurrentIndex(index)}
+          renderItem={({item}) => renderPage(item)}
+        />
+      </View>
 
       {/* Pagination Indicators */}
       <View style={styles.pagination}>
@@ -128,6 +126,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 16,
   },
+  carouselWrapper: {
+    width: '90%',
+    height: 270,
+    overflow: 'hidden',
+  },
   pageContainer: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -148,13 +151,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  icon: {
+    height: 30,
+    width: 30,
+  },
+
   titleContainer: {
-    justifyContent: 'center',
+    height: 30,
+
     alignItems: 'center',
+    marginTop: 6,
   },
   title: {
     fontSize: 11,
-    marginTop: 6,
     textAlign: 'center',
   },
   pagination: {

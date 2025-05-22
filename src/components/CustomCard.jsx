@@ -17,6 +17,7 @@ const CustomCard = ({icon, title, subtitle, buttonText}) => {
           </Text>
           <CustomButton
             text={buttonText}
+            iconRight={'arrow-forward'}
             borderColor={Colors.black_111}
             iconColor={Colors.green_04bb5f}
             textColor={Colors.black_111}

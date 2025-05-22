@@ -6,17 +6,17 @@ import {
   Text,
   View,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import CustomHeader from '../components/CustomHeader';
 import Colors from '../utils/constants/Colors';
-import Test from '../components/Test';
+import CustomAccordion from '../components/CustomAccordion';
 
 const CashPointsScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
       <CustomHeader title={'Cash Deposit'} />
-      <Test />
+      <CustomAccordion />
     </SafeAreaView>
   );
 };
@@ -25,7 +25,7 @@ export default CashPointsScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.blue_007aff,
+    backgroundColor: Colors.white_fff,
     flex: 1,
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },

@@ -49,11 +49,6 @@ const styles = StyleSheet.create({
     marginTop: 16,
     paddingHorizontal: 16,
   },
-  tagText: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#333',
-  },
   cardTitle: {
     fontSize: 18,
     marginBottom: 4,

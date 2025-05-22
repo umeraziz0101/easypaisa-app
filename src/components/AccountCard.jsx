@@ -1,9 +1,14 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../utils/constants/Colors';
 
 const AccountCard = () => {
+  const userAmount = 40.68;
+  const [showPassword, setShowPassword] = useState(false);
+  const onPressShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <View style={styles.accountCard}>
       <View style={styles.accountInfo}>
@@ -20,16 +25,20 @@ const AccountCard = () => {
         <View>
           <Text style={styles.balanceLabel}>Available Balance</Text>
           <View style={styles.balanceRow}>
-            <Text style={styles.balanceStars}>* * * * * *</Text>
-            <TouchableOpacity>
+            <Text style={styles.balanceStars}>
+              {showPassword ? `Rs. ${userAmount}` : '* * * * * *'}
+            </Text>
+            <TouchableOpacity onPress={onPressShowPassword}>
               <Ionicons
-                name={'eye-outline'}
+                name={showPassword ? 'eye-off-outline' : 'eye-outline'}
                 size={20}
                 color={Colors.white_fff}
               />
             </TouchableOpacity>
           </View>
-          <Text style={styles.tapText}>Tap to show balance</Text>
+          <Text style={styles.tapText}>
+            Tap to {showPassword ? 'hide' : 'show'} balance
+          </Text>
         </View>
         <View style={styles.addCashButtonContainer}>
           <TouchableOpacity style={styles.addCashButton}>
@@ -47,7 +56,7 @@ const styles = StyleSheet.create({
   accountCard: {
     backgroundColor: Colors.green_1c6f53,
     borderRadius: 12,
-    // marginHorizontal: 16,
+
     marginTop: 16,
     padding: 18,
   },
@@ -95,7 +104,7 @@ const styles = StyleSheet.create({
   balanceRow: {flexDirection: 'row', alignItems: 'center'},
   balanceStars: {
     color: Colors.white_fff,
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     marginRight: 12,
   },
@@ -107,9 +116,9 @@ const styles = StyleSheet.create({
   },
   addCashButton: {
     backgroundColor: Colors.green_04bb5f,
-    paddingVertical: 8,
-    paddingHorizontal: 36,
+    paddingVertical: 4,
+    paddingHorizontal: 28,
     borderRadius: 24,
   },
-  addCashButtonText: {color: Colors.white_fff, fontSize: 14},
+  addCashButtonText: {color: Colors.white_fff, fontSize: 12},
 });

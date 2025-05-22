@@ -152,10 +152,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white_fff,
   },
 
-  profileContainer: {
-    // flexDirection: 'row',
-    // alignItems: 'center',
-  },
+  profileContainer: {},
   profileImage: {width: 36, height: 36, borderRadius: 18, marginRight: 8},
   logoContainer: {flexDirection: 'row', justifyContent: 'center'},
   logo: {
@@ -172,8 +169,7 @@ const styles = StyleSheet.create({
   },
   accountCardContainer: {
     paddingHorizontal: 16,
-    // paddingVertical: 16,
-    // paddingTop: 16,
+
     paddingBottom: 26,
     backgroundColor: Colors.white_fff,
   },
@@ -182,7 +178,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
 
-  // Quick Action
   quickActionContainer: {
     paddingHorizontal: 16,
   },
@@ -191,7 +186,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
-  // Mini App Section
   miniAppSectionContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',

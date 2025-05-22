@@ -19,6 +19,7 @@ const DebitCard = ({title, subtitle, bgDark}) => {
       <Text style={styles.cardSubtitle}>{subtitle}</Text>
       <CustomButton
         text={'Manage card'}
+        iconRight={'arrow-forward'}
         borderColor={Colors.green_04bb5f}
         iconColor={Colors.white_fff}
         textColor={Colors.white_fff}
