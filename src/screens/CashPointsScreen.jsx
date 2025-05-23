@@ -10,12 +10,13 @@ import React, {useState} from 'react';
 import CustomHeader from '../components/CustomHeader';
 import Colors from '../utils/constants/Colors';
 import CustomAccordion from '../components/CustomAccordion';
+import Strings from '../utils/constants/Strings';
 
 const CashPointsScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
-      <CustomHeader title={'Cash Deposit'} />
+      <CustomHeader title={Strings.header.title.cashPointsScreen} />
       <CustomAccordion />
     </SafeAreaView>
   );

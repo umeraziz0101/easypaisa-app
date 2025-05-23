@@ -9,17 +9,22 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Colors from '../utils/constants/Colors';
 import CustomButton from './CustomButton';
 import KmRangeSlider from './KmRangeSlider';
+import Constants from '../utils/constants/Constants';
+import Strings from '../utils/constants/Strings';
+import {IconImages, RNVectorIcons} from '../utils/assets/Icons';
 
 export default function CustomAccordion() {
-  const [measuredHeight, setMeasuredHeight] = useState(0);
+  const [measuredHeight, setMeasuredHeight] = useState(Constants.zero);
   const [open, setOpen] = useState(false);
-  const contentHeight = useSharedValue(0);
+  const contentHeight = useSharedValue(Constants.zero);
 
-  const [kmValue, setKmValue] = useState(1.0);
+  const [kmValue, setKmValue] = useState(Constants.one);
 
   const onToggle = useCallback(() => {
     const toValue = open ? 0 : measuredHeight;
-    contentHeight.value = withTiming(toValue, {duration: 300});
+    contentHeight.value = withTiming(toValue, {
+      duration: Constants.AccordionAnimationDuration,
+    });
     setOpen(!open);
   }, [open, measuredHeight]);
 
@@ -33,7 +38,9 @@ export default function CustomAccordion() {
     if (measuredHeight !== height) {
       setMeasuredHeight(height);
       if (open) {
-        contentHeight.value = withTiming(height, {duration: 50});
+        contentHeight.value = withTiming(height, {
+          duration: Constants.accordionDuration,
+        });
       }
     }
   };
@@ -42,9 +49,13 @@ export default function CustomAccordion() {
     <View style={styles.accordionContainer}>
       <Pressable onPress={onToggle}>
         <View style={styles.header}>
-          <Text style={styles.title}>Cash Deposit</Text>
+          <Text style={styles.title}>{Strings.buttonText.cashDeposit}</Text>
           <Icon
-            name={open ? 'keyboard-arrow-down' : 'keyboard-arrow-up'}
+            name={
+              open
+                ? RNVectorIcons.MaterialIcons.keyboardArrowDown
+                : RNVectorIcons.MaterialIcons.keyboardArrowUp
+            }
             size={24}
             color={Colors.white_fff}
           />
@@ -74,20 +85,19 @@ function CashDepositBody({isMeasurement, kmValue, setKmValue}) {
   return (
     <View style={styles.bodyContainer}>
       <Text style={[styles.bodyText, {color: Colors.brown_b58755}]}>
-        Your first cash Deposit needs to be made through a Biometric (BVS) Cash
-        Point
+        {Strings.accordingBodyText}
       </Text>
 
       <View style={[styles.itemRow, {marginTop: 16}]}>
         <CustomButton
-          text="Cash Points"
-          iconImageLeft={require('../assets/icons/mark_cashpoint.png')}
+          text={Strings.buttonText.cashPoints}
+          iconImageLeft={IconImages.markBlack}
           textColor={Colors.white_fff}
           buttonContainerStyle={styles.item}
         />
         <CustomButton
-          text="Cash Points BVA"
-          iconImageLeft={require('../assets/icons/mark_cashpoint_bvs.png')}
+          text={Strings.buttonText.cashPointsBVS}
+          iconImageLeft={IconImages.markRed}
           textColor={Colors.white_fff}
           buttonContainerStyle={styles.item}
         />
@@ -99,7 +109,7 @@ function CashDepositBody({isMeasurement, kmValue, setKmValue}) {
             {kmValue.toFixed(1)}
           </Text>
           <Text style={[styles.text, {color: Colors.gray_717171}]}>
-            Location
+            {Strings.location}
           </Text>
         </View>
         <View style={styles.row}>
@@ -111,26 +121,26 @@ function CashDepositBody({isMeasurement, kmValue, setKmValue}) {
 
       <View style={styles.itemRow}>
         <View style={styles.row}>
-          <Text style={styles.text}>KM</Text>
-          <Text style={styles.text}>IslamAbad</Text>
+          <Text style={styles.text}>{Strings.km}</Text>
+          <Text style={styles.text}>{Strings.city}</Text>
         </View>
         <View style={styles.row}>
           <Text style={{fontSize: 10, color: Colors.gray_9b9b9b}}>
-            Expand Radius
+            {Strings.expandRadius}
           </Text>
         </View>
       </View>
 
       <CustomButton
-        text="How to deposit Cash"
-        iconImageLeft={require('../assets/icons/cash.png')}
+        text={Strings.buttonText.howToDepositCash}
+        iconImageLeft={IconImages.cash}
         textColor={Colors.white_fff}
         buttonContainerStyle={[
           styles.item,
           {marginHorizontal: 0, marginTop: 16},
         ]}
         buttonTextContainerStyle={{justifyContent: 'space-between'}}
-        iconRight="chevron-forward"
+        iconRight={RNVectorIcons.Ionicons.chevronForward}
         iconRightSize={16}
         iconColor={Colors.white_fff}
       />

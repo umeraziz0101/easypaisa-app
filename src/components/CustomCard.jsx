@@ -2,6 +2,7 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Colors from '../utils/constants/Colors';
 import CustomButton from './CustomButton';
+import {RNVectorIcons} from '../utils/assets/Icons';
 
 const CustomCard = ({icon, title, subtitle, buttonText}) => {
   return (
@@ -17,7 +18,7 @@ const CustomCard = ({icon, title, subtitle, buttonText}) => {
           </Text>
           <CustomButton
             text={buttonText}
-            iconRight={'arrow-forward'}
+            iconRight={RNVectorIcons.Ionicons.arrowForward}
             borderColor={Colors.black_111}
             iconColor={Colors.green_04bb5f}
             textColor={Colors.black_111}

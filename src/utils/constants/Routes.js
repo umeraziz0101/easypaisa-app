@@ -10,6 +10,10 @@ const Routes = {
     name: 'CashPoints',
     title: 'Cash Points',
   },
+  camera: {
+    name: 'Camera',
+    title: 'Camera',
+  },
   promotions: {
     name: 'Promotions',
     title: 'Promotions',
@@ -20,6 +24,9 @@ const Routes = {
   },
   mainTabs: {
     name: 'MainTabs',
+  },
+  tabs: {
+    name: 'Tabs',
   },
 };
 export default Routes;

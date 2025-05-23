@@ -2,9 +2,11 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../utils/constants/Colors';
+import {RNVectorIcons} from '../utils/assets/Icons';
+import Strings from '../utils/constants/Strings';
 
-const AccountCard = () => {
-  const userAmount = 40.68;
+const AccountCard = ({balance}) => {
+  const userAmount = balance;
   const [showPassword, setShowPassword] = useState(false);
   const onPressShowPassword = () => {
     setShowPassword(!showPassword);
@@ -13,36 +15,52 @@ const AccountCard = () => {
     <View style={styles.accountCard}>
       <View style={styles.accountInfo}>
         <View style={styles.accountLabelContainer}>
-          <Ionicons name="wallet-outline" size={18} color={Colors.white_fff} />
-          <Text style={styles.accountLabel}>easypaisa Account</Text>
+          <Ionicons
+            name={RNVectorIcons.Ionicons.walletOutline}
+            size={18}
+            color={Colors.white_fff}
+          />
+          <Text style={styles.accountLabel}>{Strings.accountLabel}</Text>
         </View>
         <View style={styles.rewardsContainer}>
-          <Text style={styles.rewardText}>My Rewards</Text>
-          <Ionicons name="ribbon-outline" size={18} color={'#ffd700'} />
+          <Text style={styles.rewardText}>{Strings.rewardText}</Text>
+          <Ionicons
+            name={RNVectorIcons.Ionicons.ribbonOutline}
+            size={18}
+            color={Colors.yellow_fed600}
+          />
         </View>
       </View>
       <View style={styles.balanceContainer}>
         <View>
-          <Text style={styles.balanceLabel}>Available Balance</Text>
+          <Text style={styles.balanceLabel}>{Strings.balanceLabel}</Text>
           <View style={styles.balanceRow}>
             <Text style={styles.balanceStars}>
-              {showPassword ? `Rs. ${userAmount}` : '* * * * * *'}
+              {showPassword
+                ? Strings.showBalanceText(userAmount)
+                : Strings.hiddenBalanceText}
             </Text>
             <TouchableOpacity onPress={onPressShowPassword}>
               <Ionicons
-                name={showPassword ? 'eye-off-outline' : 'eye-outline'}
+                name={
+                  showPassword
+                    ? RNVectorIcons.Ionicons.eyeOffOutline
+                    : RNVectorIcons.Ionicons.eyeOutline
+                }
                 size={20}
                 color={Colors.white_fff}
               />
             </TouchableOpacity>
           </View>
           <Text style={styles.tapText}>
-            Tap to {showPassword ? 'hide' : 'show'} balance
+            {showPassword ? Strings.tapToHideBalance : Strings.tapToShowBalance}
           </Text>
         </View>
         <View style={styles.addCashButtonContainer}>
           <TouchableOpacity style={styles.addCashButton}>
-            <Text style={styles.addCashButtonText}>Add Cash</Text>
+            <Text style={styles.addCashButtonText}>
+              {Strings.buttonText.addCash}
+            </Text>
           </TouchableOpacity>
         </View>
       </View>

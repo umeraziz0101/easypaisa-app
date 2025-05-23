@@ -2,6 +2,8 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import Colors from '../utils/constants/Colors';
 import CustomButton from './CustomButton';
+import {RNVectorIcons} from '../utils/assets/Icons';
+import Strings from '../utils/constants/Strings';
 
 const ProfileCard = ({userPhoto, userFullName, userNumber, userEmail}) => {
   return (
@@ -14,12 +16,12 @@ const ProfileCard = ({userPhoto, userFullName, userNumber, userEmail}) => {
           <View style={styles.titleRow}>
             <Text style={styles.title}>{userFullName}</Text>
             <CustomButton
-              iconLeft={'pencil'}
+              iconLeft={RNVectorIcons.Ionicons.pencil}
               iconLeftSize={10}
               buttonTextLeftStyle={{fontSize: 10}}
               iconColor={Colors.green_04bb5f}
               borderColor={Colors.green_04bb5f}
-              text={'Edit'}
+              text={Strings.buttonText.edit}
               buttonContainerStyle={{
                 backgroundColor: Colors.white_fff,
                 paddingVertical: 1,

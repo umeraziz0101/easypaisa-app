@@ -19,7 +19,6 @@ const SplashScreen = () => {
 
   return (
     <View style={styles.container}>
-      {/* <StatusBar hidden={true} /> */}
       <StatusBar barStyle={'dark-content'} />
 
       <Image style={styles.logo} source={Images.logo} resizeMode="contain" />

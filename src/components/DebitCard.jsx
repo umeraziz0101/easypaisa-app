@@ -3,6 +3,8 @@ import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../utils/constants/Colors';
 import CustomButton from './CustomButton';
+import {RNVectorIcons} from '../utils/assets/Icons';
+import Strings from '../utils/constants/Strings';
 const DebitCard = ({title, subtitle, bgDark}) => {
   return (
     <View
@@ -13,13 +15,17 @@ const DebitCard = ({title, subtitle, bgDark}) => {
       <View style={styles.cardTitleContainer}>
         <Text style={styles.cardTitle}>{title}</Text>
         {bgDark && (
-          <Ionicons name={'arrow-forward'} size={16} color={Colors.white_fff} />
+          <Ionicons
+            name={RNVectorIcons.Ionicons.arrowForward}
+            size={16}
+            color={Colors.white_fff}
+          />
         )}
       </View>
       <Text style={styles.cardSubtitle}>{subtitle}</Text>
       <CustomButton
-        text={'Manage card'}
-        iconRight={'arrow-forward'}
+        text={Strings.buttonText.manageCard}
+        iconRight={RNVectorIcons.Ionicons.arrowForward}
         borderColor={Colors.green_04bb5f}
         iconColor={Colors.white_fff}
         textColor={Colors.white_fff}

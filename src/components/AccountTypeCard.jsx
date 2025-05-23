@@ -2,23 +2,21 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Colors from '../utils/constants/Colors';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Strings from '../utils/constants/Strings';
+import {IconImages, RNVectorIcons} from '../utils/assets/Icons';
 
 const AccountTypeCard = ({userNumber, cardContainerStyle}) => {
   return (
     <View style={[styles.cardContainer, cardContainerStyle]}>
       <View style={styles.itemRow}>
-        <Image
-          source={require('../assets/icons/star.png')}
-          style={styles.leftIcon}
-        />
-        {/* icon */}
+        <Image source={IconImages.star} style={styles.leftIcon} />
         <View style={styles.infoContainer}>
-          <Text style={styles.titleStyle}>easypaisa Account</Text>
+          <Text style={styles.titleStyle}>{Strings.accountLabel}</Text>
           <Text style={styles.numberStyle}>{userNumber}</Text>
         </View>
         <View style={styles.iconContainer}>
           <Ionicons
-            name="chevron-down-sharp"
+            name={RNVectorIcons.Ionicons.chevronDownSharp}
             size={18}
             color={Colors.gray_322e34}
           />

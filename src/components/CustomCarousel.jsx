@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, Dimensions, Image} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import Colors from '../utils/constants/Colors';
+import {IconImages} from '../utils/assets/Icons';
+import Strings from '../utils/constants/Strings';
 
 const {width: screenWidth} = Dimensions.get('window');
 const ITEMS_PER_PAGE = 12;
@@ -11,40 +13,40 @@ const ITEM_WIDTH = screenWidth / 5 - 20;
 const GRID_WIDTH = ITEM_WIDTH * ITEMS_PER_ROW + 20;
 
 const items = [
-  {id: '1', icon: require('../assets/icons/cash.png'), title: 'Easyload'},
-  {id: '2', icon: require('../assets/icons/cash.png'), title: 'Easycash'},
-  {id: '3', icon: require('../assets/icons/cash.png'), title: 'Savings Pocket'},
-  {id: '4', icon: require('../assets/icons/cash.png'), title: 'Invite & Earn'},
-  {id: '5', icon: require('../assets/icons/cash.png'), title: 'Donations'},
-  {id: '6', icon: require('../assets/icons/cash.png'), title: 'Term Deposit'},
-  {id: '7', icon: require('../assets/icons/cash.png'), title: 'Daily Rewards'},
+  {id: '1', icon: IconImages.cash, title: Strings.carousalItems.easyLoad},
+  {id: '2', icon: IconImages.cash, title: Strings.carousalItems.easycash},
+  {id: '3', icon: IconImages.cash, title: Strings.carousalItems.savingsPocket},
+  {id: '4', icon: IconImages.cash, title: Strings.carousalItems.inviteAndEarn},
+  {id: '5', icon: IconImages.cash, title: Strings.carousalItems.donations},
+  {id: '6', icon: IconImages.cash, title: Strings.carousalItems.termDeposit},
+  {id: '7', icon: IconImages.cash, title: Strings.carousalItems.dailyRewards},
   {
     id: '8',
-    icon: require('../assets/icons/cash.png'),
-    title: 'Buy Now Pay Later',
+    icon: IconImages.cash,
+    title: Strings.carousalItems.buyNowPayLater,
   },
   {
     id: '9',
-    icon: require('../assets/icons/cash.png'),
-    title: 'Insurance Marketplace',
+    icon: IconImages.cash,
+    title: Strings.carousalItems.insuranceMarketplace,
   },
-  {id: '10', icon: require('../assets/icons/cash.png'), title: 'M-Tag'},
-  {id: '11', icon: require('../assets/icons/cash.png'), title: 'Rs.1 Game'},
-  {id: '12', icon: require('../assets/icons/cash.png'), title: 'Raast Payment'},
-  {id: '13', icon: require('../assets/icons/cash.png'), title: 'Discounts'},
-  {id: '14', icon: require('../assets/icons/cash.png'), title: 'Mini App'},
-  {id: '15', icon: require('../assets/icons/cash.png'), title: 'Topups'},
-  {id: '16', icon: require('../assets/icons/cash.png'), title: 'Remittance'},
-  {id: '17', icon: require('../assets/icons/cash.png'), title: 'Education'},
-  {id: '18', icon: require('../assets/icons/cash.png'), title: 'NADRA fee'},
+  {id: '10', icon: IconImages.cash, title: Strings.carousalItems.mTag},
+  {id: '11', icon: IconImages.cash, title: Strings.carousalItems.rsOneGame},
+  {id: '12', icon: IconImages.cash, title: Strings.carousalItems.raastPayment},
+  {id: '13', icon: IconImages.cash, title: Strings.carousalItems.discounts},
+  {id: '14', icon: IconImages.cash, title: Strings.carousalItems.miniApp},
+  {id: '15', icon: IconImages.cash, title: Strings.carousalItems.topups},
+  {id: '16', icon: IconImages.cash, title: Strings.carousalItems.remittance},
+  {id: '17', icon: IconImages.cash, title: Strings.carousalItems.education},
+  {id: '18', icon: IconImages.cash, title: Strings.carousalItems.nadraFee},
   {
     id: '19',
-    icon: require('../assets/icons/cash.png'),
-    title: 'Online Payment',
+    icon: IconImages.cash,
+    title: Strings.carousalItems.onlinePayment,
   },
-  {id: '20', icon: require('../assets/icons/cash.png'), title: 'Enter and Win'},
-  {id: '21', icon: require('../assets/icons/cash.png'), title: 'Credit Score'},
-  {id: '22', icon: require('../assets/icons/cash.png'), title: 'Tohfa'},
+  {id: '20', icon: IconImages.cash, title: Strings.carousalItems.enterAndWin},
+  {id: '21', icon: IconImages.cash, title: Strings.carousalItems.creditScore},
+  {id: '22', icon: IconImages.cash, title: Strings.carousalItems.tohfa},
 ];
 
 const chunkArrayWithSeeAll = (array, pageSize) => {
@@ -56,8 +58,8 @@ const chunkArrayWithSeeAll = (array, pageSize) => {
 
     slice.push({
       id: `see-all-${Math.floor(i / realPerPage)}`,
-      icon: require('../assets/icons/more.png'),
-      title: 'See All',
+      icon: IconImages.threeDots,
+      title: Strings.carousalItems.seeAll,
     });
 
     chunked.push(slice);
@@ -122,7 +124,7 @@ export default CustomCarousel;
 const styles = StyleSheet.create({
   container: {
     paddingVertical: 16,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white_fff,
     alignItems: 'center',
     borderRadius: 16,
   },
@@ -180,7 +182,7 @@ const styles = StyleSheet.create({
   },
   inactiveDot: {
     borderWidth: 1,
-    borderColor: '#aaa',
+    borderColor: Colors.gray_a8a8aa,
     backgroundColor: 'transparent',
   },
 });

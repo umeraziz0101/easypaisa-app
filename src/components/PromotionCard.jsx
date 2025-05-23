@@ -1,12 +1,13 @@
 import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import Colors from '../utils/constants/Colors';
+import Strings from '../utils/constants/Strings';
 
 const PromotionCard = ({item}) => {
   return (
     <View style={styles.card}>
       <View style={styles.imageContainer}>
         <Image
-          source={item.image}
+          source={{uri: item.image}}
           style={styles.cardImage}
           resizeMode="stretch"
         />
@@ -16,7 +17,7 @@ const PromotionCard = ({item}) => {
         <View style={styles.bottomContainer}>
           <Text style={styles.cardDescription}>{item.description}</Text>
           <TouchableOpacity>
-            <Text style={styles.readMore}>Read more</Text>
+            <Text style={styles.readMore}>{Strings.buttonText.readMore}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
   },
   cardDescription: {
     fontSize: 12,
-    color: '#666',
+    color: Colors.gray_666,
   },
   readMore: {
     fontSize: 14,

@@ -3,8 +3,15 @@ import React, {version} from 'react';
 import CustomHeader from './CustomHeader';
 import Colors from '../utils/constants/Colors';
 import ToggleSwitch from './ToggleSwitch';
+import Strings from '../utils/constants/Strings';
 
-const MenuScreen = ({children, title, subtitle, headerItemRight}) => {
+const MenuScreen = ({
+  children,
+  title,
+  subtitle,
+  headerItemRight,
+  appVersion,
+}) => {
   return (
     <View style={styles.container}>
       <CustomHeader
@@ -14,12 +21,20 @@ const MenuScreen = ({children, title, subtitle, headerItemRight}) => {
       <View style={styles.body}>
         <View style={styles.titleRow}>
           <Text style={styles.title}>{title}</Text>
-          {headerItemRight && <ToggleSwitch text1={'Eng'} text2={'اردو'} />}
+          {headerItemRight && (
+            <ToggleSwitch
+              text1={Strings.toggleSwitch.english}
+              text2={Strings.toggleSwitch.urdu}
+            />
+          )}
         </View>
         <View style={styles.subtitleRow}>
           <Text style={styles.subtitle}>{subtitle}</Text>
           {headerItemRight && (
-            <Text style={styles.version}>Version V2.9.87</Text>
+            <Text style={styles.version}>
+              {Strings.version}
+              {appVersion}
+            </Text>
           )}
         </View>
 

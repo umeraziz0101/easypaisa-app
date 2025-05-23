@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Image, ScrollView, StyleSheet, Dimensions} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Colors from '../utils/constants/Colors';
+import {ImagesGif} from '../utils/assets/Images';
 
 const ImageBox = ({source}) => (
   <LinearGradient
-    colors={['#ff007f', '#ffff00']}
+    colors={[Colors.pink_ff007f, Colors.yellow_ffff00]}
     start={{x: 0, y: 0}}
     end={{x: 1, y: 1}}
     style={styles.gradientBorder}>
@@ -16,10 +18,10 @@ const ImageBox = ({source}) => (
 
 const PromotionScroll = () => {
   const gifs = [
-    require('../assets/gifs/1.gif'),
-    require('../assets/gifs/2.gif'),
-    require('../assets/gifs/3.gif'),
-    require('../assets/gifs/4.gif'),
+    ImagesGif.fan,
+    ImagesGif.pizza,
+    ImagesGif.tractor,
+    ImagesGif.cycle,
   ];
 
   return (
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 12,
     overflow: 'hidden',
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white_fff,
   },
   image: {
     width: '100%',

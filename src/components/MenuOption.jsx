@@ -2,6 +2,8 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Colors from '../utils/constants/Colors';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Strings from '../utils/constants/Strings';
+import {RNVectorIcons} from '../utils/assets/Icons';
 
 const MenuOption = ({leftIcon, text, textColored, newBadge}) => {
   return (
@@ -13,12 +15,12 @@ const MenuOption = ({leftIcon, text, textColored, newBadge}) => {
         </Text>
         {newBadge && (
           <View style={styles.badgeContainer}>
-            <Text style={styles.badgeText}>NEW</Text>
+            <Text style={styles.badgeText}>{Strings.badge.new}</Text>
           </View>
         )}
       </View>
       <Ionicons
-        name={'chevron-forward'}
+        name={RNVectorIcons.Ionicons.chevronForward}
         size={22}
         color={Colors.gray_cbcbcb}
         style={styles.rightIconStyle}

@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../utils/constants/Colors';
 import QuickActionItem from '../components/QuickActionItem';
@@ -18,40 +18,58 @@ import DebitCard from '../components/DebitCard';
 import CustomCard from '../components/CustomCard';
 import PromotionScroll from '../components/PromotionScroll';
 import {useNavigation, DrawerActions} from '@react-navigation/native';
+import {Loader} from '../components/Loader';
+import data from '../data/data.json';
+import Images from '../utils/assets/Images';
+import {IconImages, RNVectorIcons} from '../utils/assets/Icons';
+import Strings from '../utils/constants/Strings';
+
 const HomeScreen = () => {
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState([]);
+
   const navigation = useNavigation();
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setUser(data.users[0]);
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const onPressMenu = () => {
     navigation.dispatch(DrawerActions.openDrawer());
   };
+
   return (
     <View style={styles.container}>
+      {/* Loader */}
+      <Loader visible={loading} />
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.profileContainer}>
           <TouchableOpacity onPress={onPressMenu}>
             <Image
-              source={require('..//assets/images/promotion2.png')}
+              source={{uri: user.profileImage}}
               style={styles.profileImage}
             />
           </TouchableOpacity>
         </View>
         <View style={styles.logoContainer}>
-          <Image
-            source={require('..//assets/images/profile.png')}
-            style={styles.logo}
-          />
+          <Image source={Images.logo} style={styles.logo} />
         </View>
         <View style={styles.headerIcons}>
           <TouchableOpacity>
             <Ionicons
-              name="search-outline"
+              name={RNVectorIcons.Ionicons.searchOutline}
               size={24}
               color={Colors.black_111}
             />
           </TouchableOpacity>
           <TouchableOpacity style={styles.bellIcon}>
             <Ionicons
-              name="notifications-outline"
+              name={RNVectorIcons.Ionicons.notificationsOutline}
               size={24}
               color={Colors.black_111}
             />
@@ -61,7 +79,7 @@ const HomeScreen = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Account Card */}
         <View style={styles.accountCardContainer}>
-          <AccountCard />
+          <AccountCard balance={user.balance} />
         </View>
         <View style={styles.bodyContainer}>
           {/* Quick Actions */}
@@ -69,64 +87,62 @@ const HomeScreen = () => {
             <View style={styles.quickActionContainer}>
               <View style={styles.quickActionRow}>
                 <QuickActionItem
-                  icon={'paper-plane-outline'}
-                  title={'Send Money'}
+                  icon={RNVectorIcons.Ionicons.paperPlaneOutline}
+                  title={Strings.sendMoney}
                 />
                 <QuickActionItem
-                  icon={'paper-plane-outline'}
-                  title={'Bill Payment'}
+                  icon={RNVectorIcons.Ionicons.paperPlaneOutline}
+                  title={Strings.billPayment}
                 />
                 <QuickActionItem
-                  icon={'paper-plane-outline'}
-                  title={'Mobile Packages'}
+                  icon={RNVectorIcons.Ionicons.paperPlaneOutline}
+                  title={Strings.mobilePackages}
                 />
               </View>
             </View>
           </CustomSection>
           {/* More with easypaisa */}
-          <CustomSection title={'More with easypaisa'}>
+          <CustomSection title={Strings.sectionTitle.moreWithEasyPaisa}>
             <CustomCarousel />
           </CustomSection>
           {/* Debit Card */}
-          <CustomSection title={'Get your easypaisa Debit Card'}>
+          <CustomSection title={Strings.sectionTitle.getDebitCard}>
             <View style={styles.miniAppSectionContainer}>
               <DebitCard
-                title={'Online Card'}
-                subtitle={'Only for Online Payments in Pakistan'}
+                title={Strings.debitCard.onlineCardTitle}
+                subtitle={Strings.debitCard.onlineCardSubtitle}
               />
               <DebitCard
-                title={'Plastic Card'}
-                subtitle={'Use at any ATM or Shop in Pakistan'}
+                title={Strings.debitCard.plasticCardTitle}
+                subtitle={Strings.debitCard.plasticCardSubtitle}
                 bgDark
               />
             </View>
           </CustomSection>
           {/* Mini Apps */}
-          <CustomSection title={'Discover miniApps on easypaisa'}>
+          <CustomSection title={Strings.sectionTitle.discoverMiniApps}>
             <CustomCarousel />
           </CustomSection>
           {/* Promotion */}
-          <CustomSection title={"Tap to see what's New"}>
+          <CustomSection title={Strings.sectionTitle.whatsNew}>
             <PromotionScroll />
           </CustomSection>
           {/* Schedule Transaction */}
-          <CustomSection title={'Schedule Your Transactions'}>
+          <CustomSection title={Strings.sectionTitle.scheduleTransactions}>
             <CustomCard
-              title={'Set payments in advance'}
-              subtitle={'Now Setup Mobile Packages and Easyload in advance.'}
-              buttonText={'Schedule Payments'}
-              icon={require('../assets/images/1.png')}
+              title={Strings.CustomCard.scheduleCard.title}
+              subtitle={Strings.CustomCard.scheduleCard.subtitle}
+              buttonText={Strings.buttonText.schedulePayments}
+              icon={IconImages.star}
             />
           </CustomSection>
           {/* Help */}
           <CustomSection childrenStyle={{marginVertical: 0}}>
             <CustomCard
-              title={'Help & Customer Support'}
-              subtitle={
-                'Register a complaint or get quick help on queries related to easypaisa'
-              }
-              buttonText={'Get Help'}
-              icon={require('../assets/images/1.png')}
+              title={Strings.CustomCard.helpCard.title}
+              subtitle={Strings.CustomCard.helpCard.subtitle}
+              buttonText={Strings.buttonText.getHelp}
+              icon={IconImages.star}
             />
           </CustomSection>
         </View>

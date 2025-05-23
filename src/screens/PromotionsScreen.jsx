@@ -1,90 +1,61 @@
-import React from 'react';
-import {StyleSheet, ScrollView, StatusBar, SafeAreaView} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  StyleSheet,
+  ScrollView,
+  StatusBar,
+  SafeAreaView,
+  FlatList,
+  View,
+} from 'react-native';
 import PromotionCard from '../components/PromotionCard';
 import CustomHeader from '../components/CustomHeader';
-
-const promotionsData = [
-  {
-    id: '1',
-    title: 'Watch every match live in just Rs. 1',
-    description: 'Subscribe & stream 🏏',
-    image: require('../assets/images/promotion1.png'),
-  },
-  {
-    id: '2',
-    title: 'Get 20% Extra',
-    description: 'Shop & clean free 👍',
-    image: require('../assets/images/promotion2.png'),
-  },
-  {
-    id: '3',
-    title: 'Book & win Rs. 10K!',
-    description: 'Get tickets via booking.com 🚂',
-    image: require('../assets/images/promotion3.png'),
-  },
-  {
-    id: '4',
-    title: 'Level up your easypoints account for just Rs. 1',
-    description: 'Eligible titles, every day 🧾',
-    image: require('../assets/images/promotion4.png'),
-  },
-  {
-    id: '5',
-    title: 'Free life insurance pe free phone upgrade!',
-    description: 'Terms apply 📱',
-    image: require('../assets/images/promotion5.png'),
-  },
-  {
-    id: '6',
-    title: 'More invites more rewards',
-    description: 'Invite & earn more! 💸',
-    image: require('../assets/images/promotion6.png'),
-  },
-  {
-    id: '7',
-    title: 'Grocery shopping just got easier',
-    description: 'Shop on fastest on-demand grocery home shop',
-    image: require('../assets/images/promotion7.png'),
-  },
-  {
-    id: '8',
-    title: 'Shop non-stop with Daraz discounts!',
-    description: 'Pay with easypaisa & save! 💰',
-    image: require('../assets/images/promotion7.png'),
-  },
-  {
-    id: '9',
-    title: 'Insurance aur prize dono free',
-    description: 'Win a bike for free! 🏍',
-    image: require('../assets/images/promotion7.png'),
-  },
-];
+import {Loader} from '../components/Loader';
+import data from '../data/data.json';
+import Strings from '../utils/constants/Strings';
+import Colors from '../utils/constants/Colors';
 
 const PromotionsScreen = () => {
+  const [loading, setLoading] = useState(true);
+  const [promotionsData, setPromotionsData] = useState([]);
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setPromotionsData(data.promotions);
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const renderItem = ({item}) => <PromotionCard item={item} />;
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
-      <CustomHeader title={'Promotions'} />
-      <ScrollView
-        style={styles.scrollView}
-        showsVerticalScrollIndicator={false}>
-        {promotionsData.map(item => (
-          <PromotionCard key={item.id} item={item} />
-        ))}
-      </ScrollView>
+      <CustomHeader title={Strings.header.title.promotionScreen} />
+      <Loader visible={loading} />
+      <View style={styles.listContainer}>
+        <FlatList
+          data={promotionsData}
+          keyExtractor={item => item.id}
+          renderItem={renderItem}
+          showsVerticalScrollIndicator={false}
+        />
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: Colors.white_fff,
     flex: 1,
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 
-  scrollView: {
+  listContainer: {
     flex: 1,
+
+    paddingBottom: 80,
   },
 });
 

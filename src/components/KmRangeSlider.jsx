@@ -1,6 +1,7 @@
 import Slider from '@react-native-community/slider';
 import {StyleSheet, Text, View} from 'react-native';
 import Colors from '../utils/constants/Colors';
+import Strings from '../utils/constants/Strings';
 const KmRangeSlider = ({val, setVal}) => {
   return (
     <View style={styles.sliderContainer}>
@@ -16,9 +17,9 @@ const KmRangeSlider = ({val, setVal}) => {
         thumbTintColor={Colors.gray_9b9b9b}
       />
       <View style={styles.labelsContainer}>
-        <Text style={styles.label}>1 KM</Text>
-        <Text style={styles.label}>10 KM</Text>
-        <Text style={styles.label}>20 KM</Text>
+        <Text style={styles.label}>{Strings.sliderLabels.km1}</Text>
+        <Text style={styles.label}>{Strings.sliderLabels.km10}</Text>
+        <Text style={styles.label}>{Strings.sliderLabels.km20}</Text>
       </View>
     </View>
   );
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 8,
-    color: '#555',
+    color: Colors.gray_555,
     marginHorizontal: 16,
   },
 });

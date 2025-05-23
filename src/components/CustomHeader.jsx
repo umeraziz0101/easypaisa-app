@@ -3,15 +3,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../utils/constants/Colors';
 import {useNavigation} from '@react-navigation/native';
 import Routes from '../utils/constants/Routes';
+import {RNVectorIcons} from '../utils/assets/Icons';
 
 const CustomHeader = ({backgroundColor, title, backIconColor}) => {
   const navigation = useNavigation();
   const onPressBack = () => {
     navigation.navigate(Routes.mainTabs.name, {
-      // “MainTabs” is your Drawer screen
-      screen: 'Tabs', // the TabNavigator’s name
+      screen: Routes.tabs.name,
       params: {
-        screen: Routes.home.name, // finally, the “Home” tab
+        screen: Routes.home.name,
       },
     });
   };
@@ -23,9 +23,9 @@ const CustomHeader = ({backgroundColor, title, backIconColor}) => {
       ]}>
       <TouchableOpacity style={styles.backButton} onPress={onPressBack}>
         <Ionicons
-          name="chevron-back"
+          name={RNVectorIcons.Ionicons.chevronBack}
           size={24}
-          color={backIconColor ? backIconColor : '#fff'}
+          color={backIconColor ? backIconColor : Colors.white_fff}
         />
       </TouchableOpacity>
       <Text style={styles.headerTitle}>{title}</Text>
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   headerTitle: {
-    color: '#fff',
+    color: Colors.white_fff,
     fontSize: 18,
   },
   placeholder: {
