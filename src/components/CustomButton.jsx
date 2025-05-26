@@ -16,10 +16,12 @@ const CustomButton = ({
   iconRightSize = 16,
   buttonTextLeftStyle,
   buttonTextContainerStyle,
+  onPressButton,
 }) => {
   return (
     <TouchableOpacity
-      style={[styles.button, {borderColor: borderColor}, buttonContainerStyle]}>
+      style={[styles.button, {borderColor: borderColor}, buttonContainerStyle]}
+      onPress={onPressButton}>
       <View
         style={[
           styles.buttonTextContainer,

@@ -7,6 +7,7 @@ const Colors = {
   yellow_e4efa5: '#e4efa5',
   yellow_fed600: '#fed600',
   yellow_ffff00: '#ffff00',
+  gray_d6d6d6: '#d6d6d6',
   gray_cbcbcb: '#cbcbcb',
   gray_a8a8aa: '#a8a8aa',
   gray_9b9b9b: '#9b9b9b',

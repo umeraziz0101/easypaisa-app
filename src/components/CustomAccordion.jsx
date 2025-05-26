@@ -82,6 +82,16 @@ export default function CustomAccordion() {
 }
 
 function CashDepositBody({isMeasurement, kmValue, setKmValue}) {
+  const [cashPointsActive, setCashPointsActive] = useState(false);
+  const [cashPointsBVSActive, setCashPointsBVSActive] = useState(false);
+
+  const onPressCashPoints = () => {
+    setCashPointsActive(!cashPointsActive);
+  };
+  const onPressCashPointsBVS = () => {
+    setCashPointsBVSActive(!cashPointsBVSActive);
+  };
+
   return (
     <View style={styles.bodyContainer}>
       <Text style={[styles.bodyText, {color: Colors.brown_b58755}]}>
@@ -92,14 +102,22 @@ function CashDepositBody({isMeasurement, kmValue, setKmValue}) {
         <CustomButton
           text={Strings.buttonText.cashPoints}
           iconImageLeft={IconImages.markBlack}
-          textColor={Colors.white_fff}
-          buttonContainerStyle={styles.item}
+          textColor={cashPointsActive ? Colors.gray_717171 : Colors.white_fff}
+          buttonContainerStyle={
+            cashPointsActive ? styles.itemActive : styles.item
+          }
+          onPressButton={onPressCashPoints}
         />
         <CustomButton
           text={Strings.buttonText.cashPointsBVS}
           iconImageLeft={IconImages.markRed}
-          textColor={Colors.white_fff}
-          buttonContainerStyle={styles.item}
+          textColor={
+            cashPointsBVSActive ? Colors.gray_717171 : Colors.white_fff
+          }
+          buttonContainerStyle={
+            cashPointsBVSActive ? styles.itemActive : styles.item
+          }
+          onPressButton={onPressCashPointsBVS}
         />
       </View>
 
@@ -202,6 +220,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 6,
     backgroundColor: Colors.green_04bb5f,
     borderColor: Colors.green_04bb5f,
+  },
+  itemActive: {
+    marginHorizontal: 6,
+    backgroundColor: Colors.gray_d6d6d6,
+    borderColor: Colors.gray_d6d6d6,
   },
   text: {
     fontSize: 16,

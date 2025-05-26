@@ -9,13 +9,18 @@ import MyAccountScreen from '../screens/MyAccountScreen';
 import CameraScreen from '../screens/CameraScreen';
 import Colors from '../utils/constants/Colors';
 import Routes from '../utils/constants/Routes';
+import {RNVectorIcons} from '../utils/assets/Icons';
 
 const Tab = createBottomTabNavigator();
 
 const CameraTabButton = ({onPress}) => (
   <TouchableOpacity style={styles.cameraButtonContainer} onPress={onPress}>
     <View style={styles.cameraButton}>
-      <Ionicons name="camera" size={28} color={Colors.white_fff} />
+      <Ionicons
+        name={RNVectorIcons.Ionicons.camera}
+        size={28}
+        color={Colors.white_fff}
+      />
     </View>
   </TouchableOpacity>
 );
@@ -30,24 +35,33 @@ const TabNavigator = () => {
         tabBarActiveTintColor: Colors.green_04bb5f,
         tabBarInactiveTintColor: Colors.black_111,
         tabBarStyle: {height: 90},
+        // tabBarItemStyle: {flex: 1},
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
           if (route.name === Routes.home.name) {
-            iconName = focused ? 'home' : 'home-outline';
+            iconName = focused
+              ? RNVectorIcons.Ionicons.home
+              : RNVectorIcons.Ionicons.homeOutline;
           } else if (route.name === Routes.cashPoints.name) {
-            iconName = focused ? 'location-sharp' : 'location-outline';
+            iconName = focused
+              ? RNVectorIcons.Ionicons.locationSharp
+              : RNVectorIcons.Ionicons.locationOutline;
           } else if (route.name === Routes.promotions.name) {
-            iconName = focused ? 'pricetags' : 'pricetags-outline';
+            iconName = focused
+              ? RNVectorIcons.Ionicons.pricetags
+              : RNVectorIcons.Ionicons.pricetagsOutline;
           } else if (route.name === Routes.myAccount.name) {
-            iconName = focused ? 'person' : 'person-outline';
+            iconName = focused
+              ? RNVectorIcons.Ionicons.person
+              : RNVectorIcons.Ionicons.personOutline;
           }
-
           if (route.name === Routes.camera.name) {
             return null;
           }
 
           return (
             <View style={styles.iconContainer}>
+              {focused && <View style={styles.indicator} />}
               <Ionicons name={iconName} size={size} color={color} />
             </View>
           );
@@ -87,23 +101,36 @@ const TabNavigator = () => {
 
 const styles = StyleSheet.create({
   cameraButtonContainer: {
-    top: -20,
+    top: 6,
     justifyContent: 'center',
     alignItems: 'center',
   },
   cameraButton: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 50,
+    height: 50,
+    borderRadius: 10,
     backgroundColor: Colors.green_04bb5f,
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 5,
   },
   iconContainer: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 40,
+    position: 'relative',
+    paddingTop: 6,
+    // backgroundColor: '#aa3',
+  },
+  indicator: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 3,
+    backgroundColor: Colors.green_04bb5f,
+    borderTopLeftRadius: 2,
+    borderTopRightRadius: 2,
   },
 });
 

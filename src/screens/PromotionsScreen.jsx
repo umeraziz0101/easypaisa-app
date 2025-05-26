@@ -48,14 +48,13 @@ const PromotionsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.white_fff,
+    // backgroundColor: '#aa3',
     flex: 1,
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 
   listContainer: {
     flex: 1,
-
-    paddingBottom: 80,
   },
 });
 
