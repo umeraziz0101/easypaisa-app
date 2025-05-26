@@ -18,6 +18,8 @@ const Strings = {
   version: 'Version V',
   accordingBodyText:
     'Your first cash Deposit needs to be made through a Biometric (BVS) CashPoint',
+  permissionDenied: 'Permission Denied',
+  noDeviceFound: 'No device found',
   buttonText: {
     addCash: 'Add Cash',
     cashDeposit: 'Cash Deposit',
