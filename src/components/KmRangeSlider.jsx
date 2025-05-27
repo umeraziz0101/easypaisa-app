@@ -29,7 +29,7 @@ const KmRangeSlider = ({val, setVal}) => {
           onValueChange={setVal}
           minimumTrackTintColor={Colors.gray_9b9b9b}
           maximumTrackTintColor={Colors.gray_cbcbcb}
-          thumbTintColor="transparent"
+          thumbTintColor={Strings.transparent}
           onLayout={event => {
             setSliderLayout(event.nativeEvent.layout);
           }}

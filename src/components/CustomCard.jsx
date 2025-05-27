@@ -22,7 +22,7 @@ const CustomCard = ({icon, title, subtitle, buttonText}) => {
             borderColor={Colors.black_111}
             iconColor={Colors.green_04bb5f}
             textColor={Colors.black_111}
-            buttonContainerStyle={{alignSelf: 'flex-start', borderWidth: 1}}
+            buttonContainerStyle={styles.button}
           />
         </View>
       </View>
@@ -56,4 +56,8 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   subtitle: {fontSize: 14, marginBottom: 24},
+  button: {
+    alignSelf: 'flex-start',
+    borderWidth: 1,
+  },
 });

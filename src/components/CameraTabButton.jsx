@@ -2,11 +2,16 @@ import React from 'react';
 import {TouchableOpacity, View, StyleSheet} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../utils/constants/Colors';
+import {RNVectorIcons} from '../utils/assets/Icons';
 
 const CameraTabButton = ({onPress}) => (
   <TouchableOpacity style={styles.container} onPress={onPress}>
     <View style={styles.button}>
-      <Ionicons name="camera" size={28} color={Colors.white_fff} />
+      <Ionicons
+        name={RNVectorIcons.Ionicons.camera}
+        size={28}
+        color={Colors.white_fff}
+      />
     </View>
   </TouchableOpacity>
 );

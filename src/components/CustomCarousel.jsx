@@ -57,7 +57,7 @@ const chunkArrayWithSeeAll = (array, pageSize) => {
     const slice = array.slice(i, i + realPerPage);
 
     slice.push({
-      id: `see-all-${Math.floor(i / realPerPage)}`,
+      id: Math.floor(i / realPerPage),
       icon: IconImages.threeDots,
       title: Strings.carousalItems.seeAll,
     });
@@ -103,7 +103,6 @@ const CustomCarousel = () => {
         />
       </View>
 
-      {/* Pagination Indicators */}
       <View style={styles.pagination}>
         {pages.map((_, index) => (
           <View
@@ -183,6 +182,5 @@ const styles = StyleSheet.create({
   inactiveDot: {
     borderWidth: 1,
     borderColor: Colors.gray_a8a8aa,
-    backgroundColor: 'transparent',
   },
 });

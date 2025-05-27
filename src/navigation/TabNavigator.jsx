@@ -1,6 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {View, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, TouchableOpacity, StyleSheet, Pressable} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from '../screens/HomeScreen';
 import CashPointsScreen from '../screens/CashPointsScreen';
@@ -10,11 +10,12 @@ import CameraScreen from '../screens/CameraScreen';
 import Colors from '../utils/constants/Colors';
 import Routes from '../utils/constants/Routes';
 import {RNVectorIcons} from '../utils/assets/Icons';
+import Strings from '../utils/constants/Strings';
 
 const Tab = createBottomTabNavigator();
 
 const CameraTabButton = ({onPress}) => (
-  <TouchableOpacity style={styles.cameraButtonContainer} onPress={onPress}>
+  <Pressable style={styles.cameraButtonContainer} onPress={onPress}>
     <View style={styles.cameraButton}>
       <Ionicons
         name={RNVectorIcons.Ionicons.camera}
@@ -22,7 +23,7 @@ const CameraTabButton = ({onPress}) => (
         color={Colors.white_fff}
       />
     </View>
-  </TouchableOpacity>
+  </Pressable>
 );
 
 const TabNavigator = () => {
@@ -31,12 +32,14 @@ const TabNavigator = () => {
       initialRouteName={Routes.home.name}
       screenOptions={({route}) => ({
         headerShown: false,
-        tabBarLabelStyle: {fontSize: 12, marginTop: 4},
+        tabBarLabelStyle: {fontSize: 12, marginTop: 6},
         tabBarActiveTintColor: Colors.green_04bb5f,
         tabBarInactiveTintColor: Colors.black_111,
-        tabBarStyle: {height: 90},
-        // tabBarItemStyle: {flex: 1},
-        tabBarIcon: ({focused, color, size}) => {
+        tabBarStyle: {height: 80},
+        tabBarItemStyle: ({focused}) => {
+          return focused && <View style={styles.indicator} />;
+        },
+        tabBarIcon: ({focused, color}) => {
           let iconName;
           if (route.name === Routes.home.name) {
             iconName = focused
@@ -62,7 +65,7 @@ const TabNavigator = () => {
           return (
             <View style={styles.iconContainer}>
               {focused && <View style={styles.indicator} />}
-              <Ionicons name={iconName} size={size} color={color} />
+              <Ionicons name={iconName} size={24} color={color} />
             </View>
           );
         },
@@ -81,7 +84,7 @@ const TabNavigator = () => {
         name={Routes.camera.name}
         component={CameraScreen}
         options={{
-          title: '',
+          title: Strings.empty,
           tabBarButton: props => <CameraTabButton {...props} />,
         }}
       />
@@ -120,7 +123,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'relative',
     paddingTop: 6,
-    // backgroundColor: '#aa3',
   },
   indicator: {
     position: 'absolute',

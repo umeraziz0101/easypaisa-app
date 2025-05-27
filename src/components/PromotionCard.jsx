@@ -41,7 +41,9 @@ const PromotionCard = ({item}) => {
         )}
         {imageError && (
           <View style={styles.imageError}>
-            <Text style={styles.errorText}>Failed to load image</Text>
+            <Text style={styles.errorText}>
+              {Strings.errors.failedToLoadImage}
+            </Text>
           </View>
         )}
       </View>

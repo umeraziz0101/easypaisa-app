@@ -18,17 +18,11 @@ const ProfileCard = ({userPhoto, userFullName, userNumber, userEmail}) => {
             <CustomButton
               iconLeft={RNVectorIcons.Ionicons.pencil}
               iconLeftSize={10}
-              buttonTextLeftStyle={{fontSize: 10}}
+              buttonTextLeftStyle={styles.buttonText}
               iconColor={Colors.green_04bb5f}
               borderColor={Colors.green_04bb5f}
               text={Strings.buttonText.edit}
-              buttonContainerStyle={{
-                backgroundColor: Colors.white_fff,
-                paddingVertical: 1,
-                paddingHorizontal: 12,
-                height: 20,
-                flex: 0,
-              }}
+              buttonContainerStyle={styles.button}
             />
           </View>
           <Text style={styles.number}>{userNumber}</Text>
@@ -78,4 +72,14 @@ const styles = StyleSheet.create({
   },
   number: {fontSize: 14, color: Colors.white_fff},
   email: {fontSize: 12, color: Colors.white_fff},
+  button: {
+    backgroundColor: Colors.white_fff,
+    paddingVertical: 1,
+    paddingHorizontal: 12,
+    height: 20,
+    flex: 0,
+  },
+  buttonText: {
+    fontSize: 10,
+  },
 });

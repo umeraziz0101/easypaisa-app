@@ -19,10 +19,13 @@ import CustomCard from '../components/CustomCard';
 import PromotionScroll from '../components/PromotionScroll';
 import {useNavigation, DrawerActions} from '@react-navigation/native';
 import {Loader} from '../components/Loader';
-import data from '../data/data.json';
+
 import Images from '../utils/assets/Images';
 import {IconImages, RNVectorIcons} from '../utils/assets/Icons';
 import Strings from '../utils/constants/Strings';
+import {users} from '../data/DataManager';
+import Constants from '../utils/constants/Constants';
+import LinearGradient from 'react-native-linear-gradient';
 
 const HomeScreen = () => {
   const [loading, setLoading] = useState(true);
@@ -32,9 +35,9 @@ const HomeScreen = () => {
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
-      setUser(data.users[0]);
+      setUser(users[0]);
       setLoading(false);
-    }, 1000);
+    }, Constants.millisecondsLoading);
     return () => clearTimeout(timer);
   }, []);
 
@@ -47,7 +50,11 @@ const HomeScreen = () => {
       {/* Loader */}
       <Loader visible={loading} />
       {/* Header */}
-      <View style={styles.header}>
+      <LinearGradient
+        colors={[Colors.green_90ee90, Colors.green_b8f5b8, Colors.green_b8e0b8]}
+        style={styles.header}
+        start={{x: 0, y: 0}}
+        end={{x: 0, y: 1}}>
         <View style={styles.profileContainer}>
           <TouchableOpacity onPress={onPressMenu}>
             <Image
@@ -75,12 +82,16 @@ const HomeScreen = () => {
             />
           </TouchableOpacity>
         </View>
-      </View>
+      </LinearGradient>
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Account Card */}
-        <View style={styles.accountCardContainer}>
+        <LinearGradient
+          colors={[Colors.green_b8e0b8, Colors.green_e8f5e8, Colors.white_fff]}
+          style={styles.accountCardContainer}
+          start={{x: 0, y: 0}}
+          end={{x: 0, y: 1}}>
           <AccountCard balance={user.balance} />
-        </View>
+        </LinearGradient>
         <View style={styles.bodyContainer}>
           {/* Quick Actions */}
           <CustomSection>
@@ -206,4 +217,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  gradientBackground: {},
 });

@@ -30,7 +30,19 @@ const CameraScreen = () => {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
       <CustomHeader title={Strings.header.title.cameraScreen} />
-      <Camera style={styles.preview} device={device} isActive={true} />
+      {!hasPermission ? (
+        <View>
+          <Text>{Strings.permissionDenied}</Text>
+        </View> ? (
+          device == null
+        ) : (
+          <View>
+            <Text>{Strings.noDeviceFound}</Text>
+          </View>
+        )
+      ) : (
+        <Camera style={styles.preview} device={device} isActive={true} />
+      )}
     </SafeAreaView>
   );
 };

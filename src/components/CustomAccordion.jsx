@@ -13,7 +13,12 @@ import Constants from '../utils/constants/Constants';
 import Strings from '../utils/constants/Strings';
 import {IconImages, RNVectorIcons} from '../utils/assets/Icons';
 
-export default function CustomAccordion() {
+export default function CustomAccordion({
+  cashActive,
+  onToggleCash,
+  cashBVSActive,
+  onToggleCashBVS,
+}) {
   const [measuredHeight, setMeasuredHeight] = useState(Constants.zero);
   const [open, setOpen] = useState(false);
   const contentHeight = useSharedValue(Constants.zero);
@@ -75,23 +80,25 @@ export default function CustomAccordion() {
           isMeasurement={false}
           kmValue={kmValue}
           setKmValue={setKmValue}
+          cashActive={cashActive}
+          onToggleCash={onToggleCash}
+          onToggleCashBVS={onToggleCashBVS}
+          cashBVSActive={cashBVSActive}
         />
       </Animated.View>
     </View>
   );
 }
 
-function CashDepositBody({isMeasurement, kmValue, setKmValue}) {
-  const [cashPointsActive, setCashPointsActive] = useState(false);
-  const [cashPointsBVSActive, setCashPointsBVSActive] = useState(false);
-
-  const onPressCashPoints = () => {
-    setCashPointsActive(!cashPointsActive);
-  };
-  const onPressCashPointsBVS = () => {
-    setCashPointsBVSActive(!cashPointsBVSActive);
-  };
-
+function CashDepositBody({
+  isMeasurement,
+  kmValue,
+  setKmValue,
+  cashActive,
+  onToggleCash,
+  cashBVSActive,
+  onToggleCashBVS,
+}) {
   return (
     <View style={styles.bodyContainer}>
       <Text style={[styles.bodyText, {color: Colors.brown_b58755}]}>
@@ -102,22 +109,16 @@ function CashDepositBody({isMeasurement, kmValue, setKmValue}) {
         <CustomButton
           text={Strings.buttonText.cashPoints}
           iconImageLeft={IconImages.markBlack}
-          textColor={cashPointsActive ? Colors.gray_717171 : Colors.white_fff}
-          buttonContainerStyle={
-            cashPointsActive ? styles.itemActive : styles.item
-          }
-          onPressButton={onPressCashPoints}
+          textColor={cashActive ? Colors.gray_717171 : Colors.white_fff}
+          buttonContainerStyle={cashActive ? styles.itemActive : styles.item}
+          onPressButton={onToggleCash}
         />
         <CustomButton
           text={Strings.buttonText.cashPointsBVS}
           iconImageLeft={IconImages.markRed}
-          textColor={
-            cashPointsBVSActive ? Colors.gray_717171 : Colors.white_fff
-          }
-          buttonContainerStyle={
-            cashPointsBVSActive ? styles.itemActive : styles.item
-          }
-          onPressButton={onPressCashPointsBVS}
+          textColor={cashBVSActive ? Colors.gray_717171 : Colors.white_fff}
+          buttonContainerStyle={cashBVSActive ? styles.itemActive : styles.item}
+          onPressButton={onToggleCashBVS}
         />
       </View>
 
@@ -200,6 +201,7 @@ const styles = StyleSheet.create({
   },
   bodyContainer: {
     marginVertical: 20,
+    marginBottom: 40,
   },
   bodyText: {
     textAlign: 'center',

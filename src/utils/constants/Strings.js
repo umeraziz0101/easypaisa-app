@@ -11,11 +11,13 @@ const Strings = {
   expandRadius: 'Expand Radius',
   sendMoney: 'Send Money',
   billPayment: 'Bill Payment',
+  empty: '',
   mobilePackages: 'Mobile Packages',
   help: 'Help',
   km: 'KM',
   city: 'IslamAbad',
   version: 'Version V',
+  transparent: 'transparent',
   accordingBodyText:
     'Your first cash Deposit needs to be made through a Biometric (BVS) CashPoint',
   permissionDenied: 'Permission Denied',
@@ -125,6 +127,9 @@ const Strings = {
       subtitle:
         'Register a complaint or get quick help on queries related to easypaisa',
     },
+  },
+  errors: {
+    failedToLoadImage: 'Failed to load image',
   },
 };
 
