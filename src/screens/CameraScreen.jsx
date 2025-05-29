@@ -1,5 +1,12 @@
-import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import React, {useEffect} from 'react';
 import CustomHeader from '../components/CustomHeader';
 import Strings from '../utils/constants/Strings';
 import Colors from '../utils/constants/Colors';
@@ -12,37 +19,43 @@ import {
 
 const CameraScreen = () => {
   const device = useCameraDevice('back');
-  const {hasPermission} = useCameraPermission();
+  const {hasPermission, requestPermission} = useCameraPermission();
 
-  if (!hasPermission)
+  useEffect(() => {
+    if (!hasPermission) {
+      requestPermission();
+    }
+  }, [hasPermission, requestPermission]);
+
+  if (!hasPermission) {
     return (
-      <View>
-        <Text>{Strings.permissionDenied}</Text>
-      </View>
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="dark-content" />
+        <CustomHeader title={Strings.header.title.cameraScreen} />
+        <View>
+          <Text>{Strings.permissionDenied}</Text>
+        </View>
+      </SafeAreaView>
     );
-  if (device == null)
+  }
+
+  if (device == null) {
     return (
-      <View>
-        <Text>{Strings.noDeviceFound}</Text>
-      </View>
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="dark-content" />
+        <CustomHeader title={Strings.header.title.cameraScreen} />
+        <View>
+          <Text>{Strings.noDeviceFound}</Text>
+        </View>
+      </SafeAreaView>
     );
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
       <CustomHeader title={Strings.header.title.cameraScreen} />
-      {!hasPermission ? (
-        <View>
-          <Text>{Strings.permissionDenied}</Text>
-        </View> ? (
-          device == null
-        ) : (
-          <View>
-            <Text>{Strings.noDeviceFound}</Text>
-          </View>
-        )
-      ) : (
-        <Camera style={styles.preview} device={device} isActive={true} />
-      )}
+      <Camera style={styles.preview} device={device} isActive={true} />
     </SafeAreaView>
   );
 };
