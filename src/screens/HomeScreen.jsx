@@ -47,6 +47,7 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="dark-content" />
       {/* Loader */}
       <Loader visible={loading} />
       {/* Header */}
