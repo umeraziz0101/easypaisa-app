@@ -4,6 +4,7 @@ import Carousel from 'react-native-reanimated-carousel';
 import Colors from '../utils/constants/Colors';
 import {IconImages} from '../utils/assets/Icons';
 import Strings from '../utils/constants/Strings';
+import {carouselItems} from '../data/DataManager';
 
 const {width: screenWidth} = Dimensions.get('window');
 const ITEMS_PER_PAGE = 12;
@@ -12,42 +13,7 @@ const ITEMS_PER_ROW = 5;
 const ITEM_WIDTH = screenWidth / 5 - 20;
 const GRID_WIDTH = ITEM_WIDTH * ITEMS_PER_ROW + 20;
 
-const items = [
-  {id: '1', icon: IconImages.cash, title: Strings.carousalItems.easyLoad},
-  {id: '2', icon: IconImages.cash, title: Strings.carousalItems.easycash},
-  {id: '3', icon: IconImages.cash, title: Strings.carousalItems.savingsPocket},
-  {id: '4', icon: IconImages.cash, title: Strings.carousalItems.inviteAndEarn},
-  {id: '5', icon: IconImages.cash, title: Strings.carousalItems.donations},
-  {id: '6', icon: IconImages.cash, title: Strings.carousalItems.termDeposit},
-  {id: '7', icon: IconImages.cash, title: Strings.carousalItems.dailyRewards},
-  {
-    id: '8',
-    icon: IconImages.cash,
-    title: Strings.carousalItems.buyNowPayLater,
-  },
-  {
-    id: '9',
-    icon: IconImages.cash,
-    title: Strings.carousalItems.insuranceMarketplace,
-  },
-  {id: '10', icon: IconImages.cash, title: Strings.carousalItems.mTag},
-  {id: '11', icon: IconImages.cash, title: Strings.carousalItems.rsOneGame},
-  {id: '12', icon: IconImages.cash, title: Strings.carousalItems.raastPayment},
-  {id: '13', icon: IconImages.cash, title: Strings.carousalItems.discounts},
-  {id: '14', icon: IconImages.cash, title: Strings.carousalItems.miniApp},
-  {id: '15', icon: IconImages.cash, title: Strings.carousalItems.topups},
-  {id: '16', icon: IconImages.cash, title: Strings.carousalItems.remittance},
-  {id: '17', icon: IconImages.cash, title: Strings.carousalItems.education},
-  {id: '18', icon: IconImages.cash, title: Strings.carousalItems.nadraFee},
-  {
-    id: '19',
-    icon: IconImages.cash,
-    title: Strings.carousalItems.onlinePayment,
-  },
-  {id: '20', icon: IconImages.cash, title: Strings.carousalItems.enterAndWin},
-  {id: '21', icon: IconImages.cash, title: Strings.carousalItems.creditScore},
-  {id: '22', icon: IconImages.cash, title: Strings.carousalItems.tohfa},
-];
+const items = carouselItems;
 
 const chunkArrayWithSeeAll = (array, pageSize) => {
   const realPerPage = pageSize - 1;

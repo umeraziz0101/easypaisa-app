@@ -169,5 +169,117 @@
       "coordinate": [74.26789, 31.509876],
       "name": "Iqbal Town BVS"
     }
+  ],
+  "carouselItems": [
+    {
+      "id": "1",
+      "iconKey": "cash",
+      "title": "Easy Load"
+    },
+    {
+      "id": "2",
+      "iconKey": "cash",
+      "title": "Easycash"
+    },
+    {
+      "id": "3",
+      "iconKey": "cash",
+      "title": "Savings Pocket"
+    },
+    {
+      "id": "4",
+      "iconKey": "cash",
+      "title": "Invite and Earn"
+    },
+    {
+      "id": "5",
+      "iconKey": "cash",
+      "title": "Donations"
+    },
+    {
+      "id": "6",
+      "iconKey": "cash",
+      "title": "Term Deposit"
+    },
+    {
+      "id": "7",
+      "iconKey": "cash",
+      "title": "Daily Rewards"
+    },
+    {
+      "id": "8",
+      "iconKey": "cash",
+      "title": "Buy Now Pay Later"
+    },
+    {
+      "id": "9",
+      "iconKey": "cash",
+      "title": "Insurance Marketplace"
+    },
+    {
+      "id": "10",
+      "iconKey": "cash",
+      "title": "M-Tag"
+    },
+    {
+      "id": "11",
+      "iconKey": "cash",
+      "title": "Rs One Game"
+    },
+    {
+      "id": "12",
+      "iconKey": "cash",
+      "title": "Raast Payment"
+    },
+    {
+      "id": "13",
+      "iconKey": "cash",
+      "title": "Discounts"
+    },
+    {
+      "id": "14",
+      "iconKey": "cash",
+      "title": "Mini App"
+    },
+    {
+      "id": "15",
+      "iconKey": "cash",
+      "title": "Topups"
+    },
+    {
+      "id": "16",
+      "iconKey": "cash",
+      "title": "Remittance"
+    },
+    {
+      "id": "17",
+      "iconKey": "cash",
+      "title": "Education"
+    },
+    {
+      "id": "18",
+      "iconKey": "cash",
+      "title": "Nadra Fee"
+    },
+    {
+      "id": "19",
+      "iconKey": "cash",
+      "title": "Online Payment"
+    },
+    {
+      "id": "20",
+      "iconKey": "cash",
+      "title": "Enter and Win"
+    },
+    {
+      "id": "21",
+      "iconKey": "cash",
+      "title": "Credit Score"
+    },
+    {
+      "id": "22",
+      "iconKey": "cash",
+      "title": "Tohfa"
+    }
   ]
 }
