@@ -1,0 +1,285 @@
+{
+  "app": {
+    "version": "2.9.87"
+  },
+  "users": [
+    {
+      "id": "1",
+      "name": "AHMAD ALI",
+      "email": "ahmadali@email.com",
+      "mobile": "03456789012",
+      "profileImage": "https://easypaisa.com.pk/wp-content/uploads/2024/07/Promotions-sign-up.jpg",
+      "balance": 78.97,
+      "accountLevel": "Digital Asaan Account"
+    }
+  ],
+  "promotions": [
+    {
+      "id": "1",
+      "title": "Watch every match live in just Rs. 1",
+      "description": "Subscribe & stream 🏏",
+      "image": "https://easypaisa.com.pk/wp-content/uploads/2024/07/Promotions-sign-up.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Get 20% Extra",
+      "description": "Shop & clean free 👍",
+      "image": "https://easypaisa.com.pk/wp-content/uploads/2024/07/Promotions-Visa-broken-image.png"
+    },
+    {
+      "id": "3",
+      "title": "Book & win Rs. 10K!",
+      "description": "Get tickets via booking.com 🚂",
+      "image": "https://easypaisa.com.pk/wp-content/uploads/2024/07/promotions-second-image.png"
+    },
+    {
+      "id": "4",
+      "title": "Level up your easypoints account for just Rs. 1",
+      "description": "Eligible title's, every day 🧾",
+      "image": "https://easypaisa.com.pk/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-05-at-5.34.10-PM-1.jpeg"
+    },
+    {
+      "id": "5",
+      "title": "Free life insurance pe free phone upgrade!",
+      "description": "Terms apply 📱",
+      "image": "https://laz-img-cdn.alicdn.com/images/ims-web/TB1deHHgy_1gK0jSZFqXXcpaXXa.jpg"
+    },
+    {
+      "id": "6",
+      "title": "More invites more rewards",
+      "description": "Invite & earn more! 💸",
+      "image": "https://apna4g.com/wp-content/uploads/2023/01/4-Easypaisa-Promo-Code-Today.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Grocery shopping just got easier",
+      "description": "Shop on fastest on-demand grocery home shop",
+      "image": "https://propakistani.pk/wp-content/uploads/2021/10/easypaisa-NIMS-certificate-1.png"
+    },
+    {
+      "id": "8",
+      "title": "Shop non-stop with Daraz discounts!",
+      "description": "Pay with easypaisa & save! 💰",
+      "image": "https://i.ytimg.com/vi/Kdq96Xq61ag/maxresdefault.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Insurance aur prize dono free",
+      "description": "Win a bike for free! 🏍",
+      "image": "https://apna4g.com/wp-content/uploads/2023/01/4-Easypaisa-Promo-Code-Today.jpg"
+    }
+  ],
+  "cashPoints": [
+    {
+      "id": "cash1",
+      "coordinate": [74.229844, 31.402258],
+      "name": "Mall Road Branch"
+    },
+    {
+      "id": "cash2",
+      "coordinate": [74.229824, 31.402253],
+      "name": "Liberty Market"
+    },
+    {
+      "id": "cash3",
+      "coordinate": [74.186047, 31.481444],
+      "name": "Gulberg Main"
+    },
+    {"id": "cash4", "coordinate": [74.267441, 31.52037], "name": "DHA Phase 5"},
+    {"id": "cash5", "coordinate": [74.204445, 31.5586], "name": "Model Town"},
+    {"id": "cash6", "coordinate": [74.343811, 31.517773], "name": "Johar Town"},
+    {
+      "id": "cash7",
+      "coordinate": [74.3088, 31.469606],
+      "name": "Valencia Town"
+    },
+    {"id": "cash8", "coordinate": [74.38742, 31.44883], "name": "Wapda Town"},
+    {"id": "cash9", "coordinate": [74.247932, 31.578947], "name": "Township"},
+    {
+      "id": "cash10",
+      "coordinate": [74.156456, 31.421267],
+      "name": "Shadman Colony"
+    }
+  ],
+  "cashPointsBVS": [
+    {
+      "id": "bvs1",
+      "coordinate": [74.229824, 31.396923],
+      "name": "Main Gulberg BVS"
+    },
+    {
+      "id": "bvs2",
+      "coordinate": [74.351234, 31.482156],
+      "name": "DHA Phase 4 BVS"
+    },
+    {
+      "id": "bvs3",
+      "coordinate": [74.198765, 31.51234],
+      "name": "Faisal Town BVS"
+    },
+    {
+      "id": "bvs4",
+      "coordinate": [74.276543, 31.445678],
+      "name": "Canal Road BVS"
+    },
+    {
+      "id": "bvs5",
+      "coordinate": [74.323456, 31.56789],
+      "name": "Garden Town BVS"
+    },
+    {"id": "bvs6", "coordinate": [74.16789, 31.478123], "name": "Anarkali BVS"},
+    {
+      "id": "bvs7",
+      "coordinate": [74.389012, 31.523456],
+      "name": "Cantonment BVS"
+    },
+    {
+      "id": "bvs8",
+      "coordinate": [74.234567, 31.498765],
+      "name": "Samanabad BVS"
+    },
+    {
+      "id": "bvs9",
+      "coordinate": [74.298765, 31.456789],
+      "name": "Muslim Town BVS"
+    },
+    {
+      "id": "bvs10",
+      "coordinate": [74.356789, 31.487654],
+      "name": "EME Society BVS"
+    },
+    {"id": "bvs11", "coordinate": [74.212345, 31.534567], "name": "Ichhra BVS"},
+    {
+      "id": "bvs12",
+      "coordinate": [74.378901, 31.465432],
+      "name": "Defense BVS"
+    },
+    {
+      "id": "bvs13",
+      "coordinate": [74.189012, 31.521098],
+      "name": "Shalimar BVS"
+    },
+    {
+      "id": "bvs14",
+      "coordinate": [74.345678, 31.476543],
+      "name": "Cavalry Ground BVS"
+    },
+    {
+      "id": "bvs15",
+      "coordinate": [74.26789, 31.509876],
+      "name": "Iqbal Town BVS"
+    }
+  ],
+  "carouselItems": [
+    {
+      "id": "1",
+      "iconKey": "cash",
+      "title": "Easy Load"
+    },
+    {
+      "id": "2",
+      "iconKey": "cash",
+      "title": "Easycash"
+    },
+    {
+      "id": "3",
+      "iconKey": "cash",
+      "title": "Savings Pocket"
+    },
+    {
+      "id": "4",
+      "iconKey": "cash",
+      "title": "Invite and Earn"
+    },
+    {
+      "id": "5",
+      "iconKey": "cash",
+      "title": "Donations"
+    },
+    {
+      "id": "6",
+      "iconKey": "cash",
+      "title": "Term Deposit"
+    },
+    {
+      "id": "7",
+      "iconKey": "cash",
+      "title": "Daily Rewards"
+    },
+    {
+      "id": "8",
+      "iconKey": "cash",
+      "title": "Buy Now Pay Later"
+    },
+    {
+      "id": "9",
+      "iconKey": "cash",
+      "title": "Insurance Marketplace"
+    },
+    {
+      "id": "10",
+      "iconKey": "cash",
+      "title": "M-Tag"
+    },
+    {
+      "id": "11",
+      "iconKey": "cash",
+      "title": "Rs One Game"
+    },
+    {
+      "id": "12",
+      "iconKey": "cash",
+      "title": "Raast Payment"
+    },
+    {
+      "id": "13",
+      "iconKey": "cash",
+      "title": "Discounts"
+    },
+    {
+      "id": "14",
+      "iconKey": "cash",
+      "title": "Mini App"
+    },
+    {
+      "id": "15",
+      "iconKey": "cash",
+      "title": "Topups"
+    },
+    {
+      "id": "16",
+      "iconKey": "cash",
+      "title": "Remittance"
+    },
+    {
+      "id": "17",
+      "iconKey": "cash",
+      "title": "Education"
+    },
+    {
+      "id": "18",
+      "iconKey": "cash",
+      "title": "Nadra Fee"
+    },
+    {
+      "id": "19",
+      "iconKey": "cash",
+      "title": "Online Payment"
+    },
+    {
+      "id": "20",
+      "iconKey": "cash",
+      "title": "Enter and Win"
+    },
+    {
+      "id": "21",
+      "iconKey": "cash",
+      "title": "Credit Score"
+    },
+    {
+      "id": "22",
+      "iconKey": "cash",
+      "title": "Tohfa"
+    }
+  ]
+}
