@@ -21,6 +21,17 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 ![CashPoint Screen](./assets/CashPointScreen4.png)
 ![CashPoint Screen](./assets/CashPointScreen5.png)
 
+### Camera Screen
+![Camera Screen](./assets/CameraScreen.png)
+
+### Promotion Screen
+![Promotion Screen](./assets/PromotionScreen.png)
+
+### MyAccount Screen
+![MyAccount Screen](./assets/MyAccountScreen1.png)
+![MyAccount Screen](./assets/MyAccountScreen2.png)
+
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
