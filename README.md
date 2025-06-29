@@ -6,7 +6,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 ![Splash Screen](./assets/splashScreen.png)
 
 ### 🏠 Home Screen
-![Home Screen](./assets/homeScreen1.png)
+![Home Screen](./assets/HomeScreen1.png)
 
 # Getting Started
 
