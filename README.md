@@ -46,39 +46,6 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 </p>
 
 
-
-## 📱 App Screens
-
-### Splash Screen
-![Splash Screen](./assets/splashScreen.png)
-
-### 🏠 Home Screen
-![Home Screen](./assets/HomeScreen1.png)
-![Home Screen](./assets/HomeScreen2.png)
-![Home Screen](./assets/HomeScreen3.png)
-
-### Home Menu
-![Menu Screen](./assets/MenuScreen1.png)
-![Menu Screen](./assets/MenuScreen2.png)
-
-### CashPoint Screen
-![CashPoint Screen](./assets/CashPointScreen1.png)
-![CashPoint Screen](./assets/CashPointScreen2.png)
-![CashPoint Screen](./assets/CashPointScreen3.png)
-![CashPoint Screen](./assets/CashPointScreen4.png)
-![CashPoint Screen](./assets/CashPointScreen5.png)
-
-### Camera Screen
-![Camera Screen](./assets/CameraScreen.png)
-
-### Promotion Screen
-![Promotion Screen](./assets/PromotionScreen.png)
-
-### MyAccount Screen
-![MyAccount Screen](./assets/MyAccountScreen1.png)
-![MyAccount Screen](./assets/MyAccountScreen2.png)
-
-
 # Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
