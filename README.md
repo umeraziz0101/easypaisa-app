@@ -7,6 +7,19 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 ### 🏠 Home Screen
 ![Home Screen](./assets/HomeScreen1.png)
+![Home Screen](./assets/HomeScreen2.png)
+![Home Screen](./assets/HomeScreen3.png)
+
+### Home Menu
+![Menu Screen](./assets/MenuScreen1.png)
+![Menu Screen](./assets/MenuScreen2.png)
+
+### CashPoint Screen
+![CashPoint Screen](./assets/CashPointScreen1.png)
+![CashPoint Screen](./assets/CashPointScreen2.png)
+![CashPoint Screen](./assets/CashPointScreen3.png)
+![CashPoint Screen](./assets/CashPointScreen4.png)
+![CashPoint Screen](./assets/CashPointScreen5.png)
 
 # Getting Started
 
