@@ -7,14 +7,14 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
   <img src="./assets/splashScreen.png" alt="Splash Screen" width="200"/>
 </p>
 
-### 🏠 Home Screen
+### Home Screen
 <p align="center">
   <img src="./assets/HomeScreen1.png" width="200"/>
   <img src="./assets/HomeScreen2.png" width="200"/>
   <img src="./assets/HomeScreen3.png" width="200"/>
 </p>
 
-### Home Menu
+### Menu Screen
 <p align="center">
   <img src="./assets/MenuScreen1.png" width="200"/>
   <img src="./assets/MenuScreen2.png" width="200"/>
