@@ -3,48 +3,54 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 ## 📱 App Screens
 
 ### Splash Screen
-<p align="center">
-  <img src="./assets/splashScreen.png" alt="Splash Screen" width="200"/>
+
+<p >
+  <img src="./assets/1 splash.png" alt="Splash Screen" width="200"/>
 </p>
 
 ### Home Screen
-<p align="center">
-  <img src="./assets/HomeScreen1.png" width="200"/>
-  <img src="./assets/HomeScreen2.png" width="200"/>
-  <img src="./assets/HomeScreen3.png" width="200"/>
+
+<p >
+  <img src="./assets/2.1 home.png" width="200"/>
+  <img src="./assets/2.2 home.png" width="200"/>
+  <img src="./assets/2.3 home.png" width="200"/>
 </p>
 
 ### Menu Screen
-<p align="center">
-  <img src="./assets/MenuScreen1.png" width="200"/>
-  <img src="./assets/MenuScreen2.png" width="200"/>
+
+<p >
+  <img src="./assets/3.1 menu.png" width="200"/>
+  <img src="./assets/3.2 menu.png" width="200"/>
 </p>
 
 ### CashPoint Screen
-<p align="center">
-  <img src="./assets/CashPointScreen1.png" width="200"/>
-  <img src="./assets/CashPointScreen2.png" width="200"/>
-  <img src="./assets/CashPointScreen3.png" width="200"/>
-  <img src="./assets/CashPointScreen4.png" width="200"/>
-  <img src="./assets/CashPointScreen5.png" width="200"/>
+
+<p >
+  <img src="./assets/4.1 cash point.png" width="200"/>
+  <img src="./assets/4.2 cash point.png" width="200"/>
+  <img src="./assets/4.3 cash point.png" width="200"/>
+  <img src="./assets/4.4 cash point.png" width="200"/>
+  <img src="./assets/4.5 cash point.png" width="200"/>
 </p>
 
 ### Camera Screen
-<p align="center">
-  <img src="./assets/CameraScreen.png" width="200"/>
+
+<p >
+  <img src="./assets/5 camera.png" width="200"/>
 </p>
 
 ### Promotion Screen
-<p align="center">
-  <img src="./assets/PromotionScreen.png" width="200"/>
+
+<p >
+  <img src="./assets/6 promotion.png" width="200"/>
 </p>
 
 ### MyAccount Screen
-<p align="center">
-  <img src="./assets/MyAccountScreen1.png" width="200"/>
-  <img src="./assets/MyAccountScreen2.png" width="200"/>
-</p>
 
+<p >
+  <img src="./assets/7.1 my account loading.png" width="200"/>
+  <img src="./assets/7.2 my account.png" width="200"/>
+</p>
 
 # Getting Started
 
