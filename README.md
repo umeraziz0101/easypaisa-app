@@ -1,5 +1,51 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+## 📱 App Screens
+
+### Splash Screen
+<p align="center">
+  <img src="./assets/splashScreen.png" alt="Splash Screen" width="200"/>
+</p>
+
+### Home Screen
+<p align="center">
+  <img src="./assets/HomeScreen1.png" width="200"/>
+  <img src="./assets/HomeScreen2.png" width="200"/>
+  <img src="./assets/HomeScreen3.png" width="200"/>
+</p>
+
+### Menu Screen
+<p align="center">
+  <img src="./assets/MenuScreen1.png" width="200"/>
+  <img src="./assets/MenuScreen2.png" width="200"/>
+</p>
+
+### CashPoint Screen
+<p align="center">
+  <img src="./assets/CashPointScreen1.png" width="200"/>
+  <img src="./assets/CashPointScreen2.png" width="200"/>
+  <img src="./assets/CashPointScreen3.png" width="200"/>
+  <img src="./assets/CashPointScreen4.png" width="200"/>
+  <img src="./assets/CashPointScreen5.png" width="200"/>
+</p>
+
+### Camera Screen
+<p align="center">
+  <img src="./assets/CameraScreen.png" width="200"/>
+</p>
+
+### Promotion Screen
+<p align="center">
+  <img src="./assets/PromotionScreen.png" width="200"/>
+</p>
+
+### MyAccount Screen
+<p align="center">
+  <img src="./assets/MyAccountScreen1.png" width="200"/>
+  <img src="./assets/MyAccountScreen2.png" width="200"/>
+</p>
+
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
